@@ -1,0 +1,191 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "SDXL office teacher workflow using cleaned square reference images through IP-Adapter Style + Composition. Uses the checkpoint VAE and a native SDXL canvas for stronger reference adherence and cleaner 3D rendering.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 202801,
+        "steps": 28,
+        "cfg": 5.2,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "9",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "5",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "SDXL KSampler"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "sd_xl_base_1.0.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "SDXL Checkpoint"
+      }
+    },
+    "5": {
+      "inputs": {
+        "width": 768,
+        "height": 1024,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "Base Latent"
+      }
+    },
+    "6": {
+      "inputs": {
+        "text": "high-quality 3d office teacher render",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Positive Prompt"
+      }
+    },
+    "7": {
+      "inputs": {
+        "text": "text, watermark, blurry, low quality",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Negative Prompt"
+      }
+    },
+    "8": {
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "preset": "PLUS (high strength)"
+      },
+      "class_type": "IPAdapterUnifiedLoader",
+      "_meta": {
+        "title": "IPAdapter Unified Loader SDXL"
+      }
+    },
+    "9": {
+      "inputs": {
+        "model": [
+          "8",
+          0
+        ],
+        "ipadapter": [
+          "8",
+          1
+        ],
+        "image_style": [
+          "10",
+          0
+        ],
+        "image_composition": [
+          "11",
+          0
+        ],
+        "weight_style": 0.72,
+        "weight_composition": 0.42,
+        "expand_style": false,
+        "combine_embeds": "average",
+        "start_at": 0,
+        "end_at": 0.74,
+        "embeds_scaling": "K+V"
+      },
+      "class_type": "IPAdapterStyleComposition",
+      "_meta": {
+        "title": "IPAdapter Style + Composition"
+      }
+    },
+    "10": {
+      "inputs": {
+        "image": "reference_subject_clean_square.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Subject Reference"
+      }
+    },
+    "11": {
+      "inputs": {
+        "image": "reference_scene_clean_square.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Scene Reference"
+      }
+    },
+    "12": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "13": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "12",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "Save Image"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "13", "input_name": "filename_prefix" },
+    "scene_tuning": {
+      "style_reference_path": { "node_id": "10", "input_name": "image" },
+      "composition_reference_path": { "node_id": "11", "input_name": "image" }
+    }
+  },
+  "result_node_id": "13"
+}

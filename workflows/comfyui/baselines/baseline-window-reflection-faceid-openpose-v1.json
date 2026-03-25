@@ -1,0 +1,256 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Window reflection workflow using Deliberate v2, lighter FaceID, OpenPose composition control, and MSE VAE for female-led medium-full 3D comic renders.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 202604,
+        "steps": 24,
+        "cfg": 6.8,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "8",
+          0
+        ],
+        "positive": [
+          "20",
+          0
+        ],
+        "negative": [
+          "20",
+          1
+        ],
+        "latent_image": [
+          "14",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "KSampler"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Main Checkpoint"
+      }
+    },
+    "5": {
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "preset": "FACEID",
+        "lora_strength": 0.42,
+        "provider": "CPU"
+      },
+      "class_type": "IPAdapterUnifiedLoaderFaceID",
+      "_meta": {
+        "title": "IPAdapter Unified Loader FaceID"
+      }
+    },
+    "6": {
+      "inputs": {
+        "image": "woman_model.jpg"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Reference Face Image"
+      }
+    },
+    "7": {
+      "inputs": {
+        "provider": "CPU",
+        "model_name": "buffalo_l"
+      },
+      "class_type": "IPAdapterInsightFaceLoader",
+      "_meta": {
+        "title": "InsightFace Loader"
+      }
+    },
+    "8": {
+      "inputs": {
+        "model": [
+          "5",
+          0
+        ],
+        "ipadapter": [
+          "5",
+          1
+        ],
+        "image": [
+          "6",
+          0
+        ],
+        "weight": 0.6,
+        "weight_faceidv2": 0.8,
+        "weight_type": "linear",
+        "combine_embeds": "concat",
+        "start_at": 0,
+        "end_at": 0.78,
+        "embeds_scaling": "K+V",
+        "insightface": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "IPAdapterFaceID",
+      "_meta": {
+        "title": "IPAdapter FaceID"
+      }
+    },
+    "12": {
+      "inputs": {
+        "text": "young East Asian woman by the apartment window at night, medium-full shot, high-quality 3d comic render",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Positive Prompt"
+      }
+    },
+    "13": {
+      "inputs": {
+        "text": "low quality, blurry, distorted face, text, watermark, extreme close-up portrait",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Negative Prompt"
+      }
+    },
+    "14": {
+      "inputs": {
+        "width": 768,
+        "height": 1152,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "Empty Latent"
+      }
+    },
+    "15": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "17",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "16": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "15",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "Save Image"
+      }
+    },
+    "17": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    },
+    "18": {
+      "inputs": {
+        "image": "female_subject_f01_pose_map.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Pose Map Image"
+      }
+    },
+    "19": {
+      "inputs": {
+        "control_net_name": "control_v11p_sd15_openpose_fp16.safetensors"
+      },
+      "class_type": "ControlNetLoader",
+      "_meta": {
+        "title": "OpenPose ControlNet"
+      }
+    },
+    "20": {
+      "inputs": {
+        "positive": [
+          "12",
+          0
+        ],
+        "negative": [
+          "13",
+          0
+        ],
+        "control_net": [
+          "19",
+          0
+        ],
+        "image": [
+          "18",
+          0
+        ],
+        "strength": 0.78,
+        "start_percent": 0,
+        "end_percent": 0.86,
+        "vae": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "ControlNetApplyAdvanced",
+      "_meta": {
+        "title": "Apply OpenPose Control"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "12", "input_name": "text" },
+    "negative_prompt": { "node_id": "13", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "14", "input_name": "width" },
+    "height": { "node_id": "14", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "16", "input_name": "filename_prefix" },
+    "scene_tuning": {
+      "reference_image_path": { "node_id": "6", "input_name": "image" },
+      "pose_map_path": { "node_id": "18", "input_name": "image" },
+      "faceid_lora_strength": { "node_id": "5", "input_name": "lora_strength" },
+      "faceid_weight": { "node_id": "8", "input_name": "weight" },
+      "faceid_weight_faceidv2": { "node_id": "8", "input_name": "weight_faceidv2" },
+      "controlnet_strength": { "node_id": "20", "input_name": "strength" }
+    }
+  },
+  "result_node_id": "16"
+}

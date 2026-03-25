@@ -1,0 +1,63 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "photoreal_window_majicmix_test",
+  "chapter_title": "真人感窗口人像基准测试",
+  "source_script_path": "data/scripts/strange_call/photoreal_window_majicmix_test.json",
+  "generated_at": "2026-03-24T16:02:04.689Z",
+  "render_defaults": {
+    "image_format": "png",
+    "device_scale_factor": 2
+  },
+  "panels": [
+    {
+      "panel_id": "r01",
+      "sequence": 1,
+      "location_id": "window_daylight",
+      "scene_description": "near-real full-body portrait of an East Asian woman squatting by a bright window in a red dress and black pantyhose",
+      "resolved_prompt": {
+        "positive": "beautiful East Asian woman, long brown-black hair, delicate facial proportions, brown eyes, natural lips, realistic eyelashes, large bright window, grey curtain, soft daylight, wooden floor, indoor natural light, airy apartment interior, full-body composition, squatting pose, looking back toward camera, red dress, black pantyhose, red high heels, soft smile, realistic skin, realistic knees and hands, bright window rim light, grey curtains, clean wood floor, shallow depth of field, natural feminine pose, very close to real photo, photorealistic, realistic skin texture, realistic skin pores, cinematic daylight, soft backlight, realistic depth of field, premium texture detail, realistic photography look",
+        "negative": "cartoon, 2d, painting, illustration, overprocessed beauty skin, plastic skin, low quality, worst quality, blurry, deformed anatomy, extra fingers, text, watermark, office props, smartphone, empty limbs, duplicate body parts, broken hands, anime face, heavy cel shading, exaggerated giant eyes, posterized skin, oversharpened edges"
+      },
+      "resolved_render": {
+        "workflow_id": "photoreal-majicmix",
+        "workflow_file": "workflows/comfyui/baselines/baseline-photoreal-majicmix-v1.json",
+        "model_id": "majicMIX realistic 麦橘写实_v7.safetensors",
+        "core": {
+          "seed": 441778010,
+          "width": 768,
+          "height": 1152,
+          "steps": 40,
+          "cfg": 4.5,
+          "sampler_name": "dpmpp_3m_sde",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {},
+        "notes": "Local near-photoreal benchmark inspired by the Civitai sample: majicMIX v7, 40 steps, DPM++ 3M SDE, low CFG, no unavailable LoRAs, no second-pass highres refinement."
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "这是一张专门验证真人感上限的基准图。"
+        ],
+        "bubble_plan": [
+          {
+            "type": "narration",
+            "text": "这是一张专门验证真人感上限的基准图。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/photoreal_window_majicmix_test/r01.png",
+        "final_image_path": "output/final_comic/strange_call/photoreal_window_majicmix_test/r01.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    }
+  ]
+}

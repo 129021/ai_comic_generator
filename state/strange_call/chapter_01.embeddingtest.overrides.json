@@ -1,0 +1,12 @@
+{
+  "panels": {
+    "p01": {
+      "prompt_build": {
+        "local_negative": "ng_deepnegative_v1_75t, (badhandv4:1.2), EasyNegative, (worst quality:1.35)"
+      },
+      "render_profile": {
+        "notes": "embedding-enhanced negative prompt test for bedroom-night baseline"
+      }
+    }
+  }
+}

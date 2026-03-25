@@ -1,0 +1,184 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Bedroom night workflow with handcrafted OpenPose-style map and OpenPose ControlNet guidance for tighter call posture control.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 101004,
+        "steps": 24,
+        "cfg": 7,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "4",
+          0
+        ],
+        "positive": [
+          "19",
+          0
+        ],
+        "negative": [
+          "19",
+          1
+        ],
+        "latent_image": [
+          "5",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "KSampler"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Main Checkpoint"
+      }
+    },
+    "5": {
+      "inputs": {
+        "width": 768,
+        "height": 1152,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "Empty Latent"
+      }
+    },
+    "6": {
+      "inputs": {
+        "text": "young East Asian man, 28 years old, ordinary urban office worker, short black hair, slim build, slightly tired eyes, natural face, restrained expression, wearing a dark gray loose T-shirt and home pants, small bedroom at night, sitting on bed, holding smartphone to ear while answering a call, upper body medium close-up, side profile, intimate suspense, soft shadows, cinematic lighting, semi-realistic cinematic comic style",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Positive Prompt"
+      }
+    },
+    "7": {
+      "inputs": {
+        "text": "low quality, blurry, bad anatomy, extra fingers, extra limbs, distorted face, watermark, text, pen, stylus, pencil, feminine face, androgynous idol look, glamour portrait, fashion photography",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Negative Prompt"
+      }
+    },
+    "8": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "20",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "p04-pose",
+        "images": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "Save Image"
+      }
+    },
+    "15": {
+      "inputs": {
+        "image": "p04_pose_map.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Pose Map Image"
+      }
+    },
+    "18": {
+      "inputs": {
+        "control_net_name": "control_v11p_sd15_openpose_fp16.safetensors"
+      },
+      "class_type": "ControlNetLoader",
+      "_meta": {
+        "title": "OpenPose ControlNet"
+      }
+    },
+    "19": {
+      "inputs": {
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "control_net": [
+          "18",
+          0
+        ],
+        "image": [
+          "15",
+          0
+        ],
+        "strength": 0.85,
+        "start_percent": 0,
+        "end_percent": 0.85,
+        "vae": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "ControlNetApplyAdvanced",
+      "_meta": {
+        "title": "Apply Pose Control"
+      }
+    },
+    "20": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "9", "input_name": "filename_prefix" },
+    "scene_tuning": {}
+  },
+  "result_node_id": "9"
+}

@@ -1,0 +1,47 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "chapter_01",
+  "updated_at": "2026-03-23T15:33:22.624Z",
+  "panels": [
+    {
+      "panel_id": "p01",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p01.preview.png",
+      "workflow_id": "bedroom-night-basic",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-basic-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T15:02:35.827Z",
+      "last_error": ""
+    },
+    {
+      "panel_id": "p04",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p04.preview.png",
+      "workflow_id": "bedroom-night-basic",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-basic-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T15:05:38.439Z",
+      "last_error": ""
+    },
+    {
+      "panel_id": "p05",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p05.preview.png",
+      "workflow_id": "bedroom-night-basic",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-basic-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T15:07:15.164Z",
+      "last_error": ""
+    },
+    {
+      "panel_id": "p10",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p10.preview.png",
+      "workflow_id": "window-reflection",
+      "workflow_file": "workflows/comfyui/baselines/baseline-window-reflection-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T15:33:22.619Z",
+      "last_error": ""
+    }
+  ]
+}

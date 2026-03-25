@@ -1,0 +1,64 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "female_subject_test",
+  "chapter_title": "女主主体测试",
+  "style_profile": {
+    "global_positive": "semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+    "global_negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed"
+  },
+  "character_anchors": {
+    "female_subject": "young East Asian woman, 26 years old, elegant short wavy black hair, refined facial features, calm attentive eyes, natural makeup, soft blush, wearing an off-white fitted knit dress with subtle jacquard pattern and realistic fabric thickness, lightweight cropped cardigan with delicate woven texture, sheer gray tights, matte low heels, realistic cloth folds, visible seam lines, high-end 3d comic heroine styling"
+  },
+  "scene_anchors": {
+    "window_corner": "apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface"
+  },
+  "panels": [
+    {
+      "panel_id": "f01",
+      "sequence": 1,
+      "location_id": "window_corner",
+      "characters": ["female_subject"],
+      "render_profile": {
+        "workflow_id": "window-reflection-faceid-openpose",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 202607,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.8,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "woman_model.jpg",
+          "pose_map_path": "output/pose_maps/female_subject_f01_pose_map.png",
+          "faceid_lora_strength": 0.5,
+          "faceid_weight": 0.7,
+          "faceid_weight_faceidv2": 0.92,
+          "controlnet_strength": 0.78
+        },
+        "notes": "female-led hero frame test using OpenPose composition control and moderately stronger FaceID to recover more likeness while preserving the medium-full silhouette"
+      },
+      "scene_description": "medium-full shot of a female lead standing by the apartment window at night with a phone in hand",
+      "prompt_build": {
+        "character_refs": ["female_subject"],
+        "scene_ref": "window_corner",
+        "local_positive": "female lead as the clear primary subject, closer facial likeness to the reference image, same short wavy black hairstyle, same eye shape, same nose bridge, same mouth shape, same soft oval face proportions as the reference image, medium-full shot, knees visible, lower legs partially visible, full outfit readability, more headroom and more space below the waist, subject smaller in frame, one hand holding a phone, other arm relaxed, window frame and city lights clearly visible, standing by the apartment window at night, premium high-quality 3d render feel, soft side lighting grazing across fabric, subtle shadow revealing cloth folds, elegant but grounded posture, modest neckline, no cleavage emphasis, off-white knit dress with visible woven texture, realistic cloth thickness, delicate cardigan texture, sheer tights with subtle material response, matte fabric response, visible hem lines, natural garment drape, detailed skin texture, realistic skin pores, natural facial micro detail, premium CGI material response, polished but realistic shading, luxurious cinematic mood",
+        "local_negative": "male primary subject, extra person, duplicate body, rubber dress, latex clothing, flat cloth, airbrushed skin, waxy skin, plastic skin, beauty retouching, fashion catalog pose, glamour poster, doll face, cheap CGI, dull fabric, muddy texture, extreme close-up portrait, face filling frame, chest-up portrait, waist-up portrait, zoomed-in portrait framing, cropped lower body, deep cleavage, bodycon glamour look, generic unrelated face, different hairstyle, different facial proportions"
+      },
+      "dialogue": [],
+      "narration": ["她像是从灯影和夜色里走出来的人。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "她像是从灯影和夜色里走出来的人。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    }
+  ]
+}

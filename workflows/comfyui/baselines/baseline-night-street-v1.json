@@ -1,0 +1,23 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Night street baseline workflow wrapper. Fill api_workflow with the exported ComfyUI API workflow for street and convenience-store panels.",
+  "api_workflow": {},
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "9", "input_name": "filename_prefix" },
+    "scene_tuning": {
+      "negative_space_strength": { "node_id": "12", "input_name": "strength" },
+      "street_mood_strength": { "node_id": "13", "input_name": "value" }
+    }
+  },
+  "result_node_id": "9"
+}

@@ -1,0 +1,13 @@
+{
+  "panels": {
+    "p04": {
+      "prompt_build": {
+        "local_positive": "close-up side profile while answering a smartphone call, phone held to ear, ordinary urban office worker, slightly tired male face, body slightly tense, intimate suspense, soft shadows, natural bedroom candid shot, medium close-up, more empty space around the head",
+        "local_negative": "awkward ear-phone placement, distorted mouth, broken jawline, pen, stylus, pencil, feminine face, androgynous idol look, glamour portrait, fashion photography"
+      },
+      "render_profile": {
+        "notes": "prioritize phone-to-ear readability, ordinary male office worker look, and typeset-friendly headroom"
+      }
+    }
+  }
+}

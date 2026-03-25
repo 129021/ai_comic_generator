@@ -1,0 +1,20 @@
+{
+  "panels": {
+    "p05": {
+      "render_profile": {
+        "workflow_id": "bedroom-night-sdxl",
+        "model_id": "sdxl-base-1.0",
+        "core": {
+          "seed": 101005,
+          "width": 640,
+          "height": 960,
+          "steps": 20,
+          "cfg": 5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "notes": "sdxl comparison test for p05; check male close-up stability against majicmix"
+      }
+    }
+  }
+}

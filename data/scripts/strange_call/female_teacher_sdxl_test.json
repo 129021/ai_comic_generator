@@ -1,0 +1,60 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "female_teacher_sdxl_test",
+  "chapter_title": "女教师 SDXL 参考图测试",
+  "style_profile": {
+    "global_positive": "(3D render, CG, octane render, Unreal Engine 5:1.25), (photorealistic, physically based rendering:1.2), highly detailed textures, clean cinematic daylight, sharp focus, realistic skin texture, accurate material separation, premium 3d comic render, top quality",
+    "global_negative": "text, watermark, subtitles, cartoon, 2d, painting, blurry, soft focus, dreamy haze, overexposed, low quality, worst quality, artifact, deformed anatomy, extra fingers, male figure, sound effect text"
+  },
+  "character_anchors": {
+    "female_teacher": "beautiful East Asian woman, short softly curled black bob hair, elegant facial proportions, calm eyes, refined nose bridge, natural lip shape"
+  },
+  "scene_anchors": {
+    "office_study": "bright office study environment, grey parquet patterned tiled floor, large stack of books and notebooks on the desk to the left, dark office cabinet with binders behind, strong sunlight from the right"
+  },
+  "panels": [
+    {
+      "panel_id": "s01",
+      "sequence": 1,
+      "location_id": "office_study",
+      "characters": ["female_teacher"],
+      "render_profile": {
+        "workflow_id": "office-teacher-sdxl",
+        "model_id": "sdxl-base-1.0",
+        "core": {
+          "seed": 202801,
+          "width": 768,
+          "height": 1024,
+          "steps": 28,
+          "cfg": 5.2,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "style_reference_path": "data/references/reference_subject_clean_square.png",
+          "composition_reference_path": "data/references/reference_scene_clean_square.png"
+        },
+        "notes": "SDXL office test using cleaned square subject and scene references through IP-Adapter Style + Composition, without the SD1.5 VAE chain."
+      },
+      "scene_description": "full-body shot of a female teacher standing in an office study and looking slightly down at a white smartphone in her left hand",
+      "prompt_build": {
+        "character_refs": ["female_teacher"],
+        "scene_ref": "office_study",
+        "local_positive": "full-body shot of a female teacher, center framing, looking down slightly at a white smartphone in her left hand, matching the cleaned subject and scene references, wearing a short white lace bolero blazer jacket with intricate floral pattern, wearing a fitted white jacquard mini dress with subtle floral woven pattern, wearing semi-sheer gray tights with a repeatable small diagonal logo-like monogram pattern across both legs, wearing gray and white pointed high heels, clear lace edges, visible tights pattern, realistic textile thickness, realistic cloth shading, premium 3d comic realism, clear material separation between skin, tights, jacket, dress and heels",
+        "local_negative": "male primary subject, visible male figure, missing phone, generic fashion catalog pose, empty background, rubber clothing, latex clothing, muddy tights texture, plain leggings, flat cloth, glossy plastic fabric, comic sound effect text, big black chinese characters"
+      },
+      "dialogue": [],
+      "narration": ["她更像一张被参考图牢牢牵住的 SDXL 结果。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "她更像一张被参考图牢牢牵住的 SDXL 结果。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    }
+  ]
+}

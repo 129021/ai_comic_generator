@@ -1,0 +1,19 @@
+{
+  "panels": {
+    "p01": {
+      "render_profile": {
+        "scene_tuning": {
+          "faceid_lora_strength": 0.5,
+          "faceid_weight": 0.72,
+          "faceid_weight_faceidv2": 0.95,
+          "controlnet_strength": 0.45
+        },
+        "notes": "p01 establishing-shot correction after quality-word refresh; keep 3d cg realism but reduce portrait pull from face lock and restore bedroom environment readability"
+      },
+      "prompt_build": {
+        "local_positive": "wide establishing shot, camera farther away, male lead alone late at night in his bedroom, sitting on the bed and scrolling on his phone, upper body to half-body visible, smartphone visible in hand, bedside lamp visible, desk visible, room environment clearly visible, ordinary candid indoor shot, more negative space around the character, subject smaller in frame, late night loneliness, handsome young male lead, polished korean webtoon cg aesthetic, clean facial rendering",
+        "local_negative": "duplicate person, extra person, mirrored body, split composition, close-up portrait, extreme close-up, headshot, face filling frame, centered beauty portrait, glamour portrait, selfie composition, fashion photography, cropped shoulders, character too large in frame"
+      }
+    }
+  }
+}

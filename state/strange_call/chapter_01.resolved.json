@@ -1,0 +1,957 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "chapter_01",
+  "chapter_title": "陌生来电",
+  "source_script_path": "data/scripts/strange_call/chapter_01.json",
+  "generated_at": "2026-03-23T15:31:49.174Z",
+  "render_defaults": {
+    "image_format": "png",
+    "device_scale_factor": 2
+  },
+  "panels": [
+    {
+      "panel_id": "p01",
+      "sequence": 1,
+      "location_id": "bedroom",
+      "scene_description": "wide establishing shot, male lead alone in bedroom late at night, scrolling on his phone",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, wide establishing shot, male lead alone late at night, scrolling on his phone, late night loneliness, handsome young male lead, polished korean webtoon cg aesthetic, clean facial rendering, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, duplicate person, extra person, mirrored body, split composition"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101001,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "primary face-locked bedroom establishing shot"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "他最近总在凌晨以后才真正安静下来。"
+        ],
+        "bubble_plan": [
+          {
+            "type": "narration",
+            "text": "他最近总在凌晨以后才真正安静下来。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p01.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p01.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p02",
+      "sequence": 2,
+      "location_id": "bedroom",
+      "scene_description": "extreme close-up of the phone screen showing an unknown incoming call",
+      "resolved_prompt": {
+        "positive": "small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, extreme close-up of smartphone incoming call screen, unknown caller, dramatic phone glow in darkness, minimalist suspense composition, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, blurry screen, unreadable interface, cluttered UI"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night-basic",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-basic-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101002,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {},
+        "notes": "phone screen close-up should remain clean and readable in composition"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [],
+        "bubble_plan": []
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p02.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p02.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p03",
+      "sequence": 3,
+      "location_id": "bedroom",
+      "scene_description": "close medium shot, male lead hesitates with finger hovering above the answer button",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, close medium shot, finger hovering above phone, suspicious and hesitant mood, warm lamp light mixed with cool phone light, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, bad hands, broken fingers, exaggerated shock"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101003,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "face lock should hold while preserving hesitation and hand positioning"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "这么晚了？"
+        ],
+        "bubble_plan": [
+          {
+            "type": "thought",
+            "text": "这么晚了？",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p03.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p03.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p04",
+      "sequence": 4,
+      "location_id": "bedroom",
+      "scene_description": "close-up side profile, male lead answers the phone in a darkened bedroom",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, close-up side profile while answering phone, body slightly tense, intimate suspense, soft shadows, dark gray cotton knit T-shirt, visible seam lines, subtle cloth thickness, natural shirt wrinkles around shoulder and chest, matte fabric response, realistic cloth folds, detailed skin texture, realistic skin pores, subtle under-eye texture, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, awkward ear-phone placement, distorted mouth, broken jawline, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, beauty retouching"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101004,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.72
+        },
+        "notes": "face lock should support the close-up phone reaction without over-stylizing"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "男主",
+            "text": "喂？",
+            "type": "normal",
+            "lang": "zh"
+          },
+          {
+            "speaker": "女主（电话）",
+            "text": "你终于接了。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "normal",
+            "text": "喂？",
+            "anchor_zone": "upper_left"
+          },
+          {
+            "type": "phone_voice",
+            "text": "你终于接了。",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p04.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p04.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p05",
+      "sequence": 5,
+      "location_id": "bedroom",
+      "scene_description": "face close-up, male lead reacts to the softness of the female voice",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, face close-up, hearing a soft female voice, surprised but restrained emotional shift, intimate atmosphere, dark gray cotton knit T-shirt collar visible near neck, visible shirt seam, natural cloth thickness, realistic fabric fold near collarbone, detailed skin texture, realistic skin pores, subtle lip texture, faint under-eye texture, natural facial micro detail, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, overacting, screaming expression, asymmetrical eyes, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, beauty retouching"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101005,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.94,
+          "faceid_weight_faceidv2": 1.25,
+          "controlnet_strength": 0.7
+        },
+        "notes": "use stronger face lock for the close-up emotional reaction shot"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "女主（电话）",
+            "text": "我还以为你今晚也不打算理人。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "phone_voice",
+            "text": "我还以为你今晚也不打算理人。",
+            "anchor_zone": "top_center"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p05.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p05.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p06",
+      "sequence": 6,
+      "location_id": "bedroom",
+      "scene_description": "medium shot, male lead sits upright on the bed and questions the caller",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, medium shot, sitting upright on bed, defensive posture, focused and guarded expression, dim room tension, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, stiff body, broken shoulders, extra arms"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101006,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "face lock should support upright posture and guarded expression"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "男主",
+            "text": "你是谁？",
+            "type": "normal",
+            "lang": "zh"
+          },
+          {
+            "speaker": "女主（电话）",
+            "text": "先别急着问这个。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "normal",
+            "text": "你是谁？",
+            "anchor_zone": "upper_left"
+          },
+          {
+            "type": "phone_voice",
+            "text": "先别急着问这个。",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p06.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p06.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p07",
+      "sequence": 7,
+      "location_id": "bedroom",
+      "scene_description": "object close-up of unopened rice ball and half glass of water on the desk",
+      "resolved_prompt": {
+        "positive": "small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, object close-up of unopened convenience store rice ball and half glass of water on desk, eerie domestic realism, lonely room detail, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, cluttered desk, unreadable package design, distorted objects"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night-basic",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-basic-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101007,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {},
+        "notes": "preserve object realism and room mood"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "女主（电话）",
+            "text": "你今晚又没吃东西。饭团买了，也没拆。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "phone_voice",
+            "text": "你今晚又没吃东西。饭团买了，也没拆。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p07.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p07.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p08",
+      "sequence": 8,
+      "location_id": "bedroom",
+      "scene_description": "close-up, male lead turns sharply toward the desk after hearing the impossible detail",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere, close-up, turning sharply toward the desk, shocked and uneasy expression, dim bedroom tension, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, twisted neck, broken shoulders, exaggerated horror face, motion blur mess"
+      },
+      "resolved_render": {
+        "workflow_id": "bedroom-night",
+        "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101008,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.92,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.72
+        },
+        "notes": "face lock should hold during the sudden turn while keeping the frame readable"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "男主",
+            "text": "你在我家？",
+            "type": "normal",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "normal",
+            "text": "你在我家？",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p08.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p08.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p09",
+      "sequence": 9,
+      "location_id": "window_corner",
+      "scene_description": "medium wide shot from behind, male lead pulls aside the curtain and checks outside",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface, medium wide shot from behind, one hand holding phone and the other pulling curtain aside, paranoid and searching mood, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, crowded city view, fantasy skyline, horror lighting"
+      },
+      "resolved_render": {
+        "workflow_id": "window-reflection",
+        "workflow_file": "workflows/comfyui/baselines/baseline-window-reflection-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101009,
+          "width": 1024,
+          "height": 1536,
+          "steps": 30,
+          "cfg": 6.8,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.2,
+          "reflection_softness": 0.45
+        },
+        "notes": "male lead should dominate the frame, reflection remains subtle"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "女主（电话）",
+            "text": "没有。",
+            "type": "phone_voice",
+            "lang": "zh"
+          },
+          {
+            "speaker": "女主（电话）",
+            "text": "我只是比别人更留意你。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "phone_voice",
+            "text": "没有。",
+            "anchor_zone": "upper_left"
+          },
+          {
+            "type": "phone_voice",
+            "text": "我只是比别人更留意你。",
+            "anchor_zone": "mid_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p09.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p09.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p10",
+      "sequence": 10,
+      "location_id": "window_corner",
+      "scene_description": "reflective close-up, the male lead is visible in the glass with a faint feminine hint beside him",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, mysterious young East Asian woman implied through visual fragments only, long dark hair, pale skin tone, slender fingers, soft feminine silhouette, intimate and calm presence, subtle sensual tension, apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface, reflective close-up, male face visible in glass, faint feminine hint beside him, ambiguous intimate presence, dreamy noir mood, blurred reflection, dark gray cotton knit T-shirt, visible cloth thickness at sleeve and torso, natural wrinkles, matte cotton response, realistic fabric folds, detailed skin texture, realistic skin pores, subtle facial micro detail, realistic soft skin shading, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, clear full female face, full body reveal, ghost horror effect, monster features, supernatural horror creature, gore, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, plastic skin, beauty retouching"
+      },
+      "resolved_render": {
+        "workflow_id": "window-reflection",
+        "workflow_file": "workflows/comfyui/baselines/baseline-window-reflection-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101010,
+          "width": 1024,
+          "height": 1536,
+          "steps": 30,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.45,
+          "reflection_softness": 0.6
+        },
+        "notes": "do not allow full female reveal"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "恶作剧？还是……"
+        ],
+        "bubble_plan": [
+          {
+            "type": "thought",
+            "text": "恶作剧？还是……",
+            "anchor_zone": "lower_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p10.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p10.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": "avoid making the female hint too literal"
+      }
+    },
+    {
+      "panel_id": "p11",
+      "sequence": 11,
+      "location_id": "window_corner",
+      "scene_description": "medium shot, the call has ended and the male lead stands alone by the window staring at the dark phone screen",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness, apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface, medium shot, standing quietly by the window after the call has ended, dark phone screen in hand, emotional emptiness and lingering unease, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, dramatic crying, exaggerated sadness, cluttered background"
+      },
+      "resolved_render": {
+        "workflow_id": "window-reflection",
+        "workflow_file": "workflows/comfyui/baselines/baseline-window-reflection-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101011,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 6.8,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.15,
+          "reflection_softness": 0.5
+        },
+        "notes": "post-call emptiness should remain the focus"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "她挂得很突然。安静却没有回来。"
+        ],
+        "bubble_plan": [
+          {
+            "type": "narration",
+            "text": "她挂得很突然。安静却没有回来。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p11.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p11.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p12",
+      "sequence": 12,
+      "location_id": "convenience_store_front",
+      "scene_description": "wide shot, the next night the male lead waits outside a convenience store holding a canned drink",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds, 24-hour convenience store entrance at night, cool white store light, glass reflections, quiet urban sidewalk, sparse pedestrians, subdued city atmosphere, wide shot, standing outside convenience store at night holding a canned drink, pretending indifference while waiting, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, crowded pedestrians, bright daytime feel, messy traffic"
+      },
+      "resolved_render": {
+        "workflow_id": "night-street",
+        "workflow_file": "workflows/comfyui/baselines/baseline-night-street-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101012,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.55,
+          "street_mood_strength": 0.7
+        },
+        "notes": "keep convenience store scene quiet and not crowded"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "第二晚，他还是来了。"
+        ],
+        "bubble_plan": [
+          {
+            "type": "narration",
+            "text": "第二晚，他还是来了。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p12.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p12.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p13",
+      "sequence": 13,
+      "location_id": "convenience_store_front",
+      "scene_description": "close medium shot, the same unknown call appears again under the convenience store light",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds, 24-hour convenience store entrance at night, cool white store light, glass reflections, quiet urban sidewalk, sparse pedestrians, subdued city atmosphere, close medium shot, phone screen lighting up with unknown caller again under convenience store light, anticipation and tension, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, blurry phone, unreadable screen, exaggerated smile"
+      },
+      "resolved_render": {
+        "workflow_id": "night-street",
+        "workflow_file": "workflows/comfyui/baselines/baseline-night-street-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101013,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.45,
+          "street_mood_strength": 0.7
+        },
+        "notes": "phone glow and anticipation should read clearly"
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [],
+        "bubble_plan": []
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p13.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p13.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p14",
+      "sequence": 14,
+      "location_id": "convenience_store_front",
+      "scene_description": "medium shot, male lead scans the street while talking on the phone outside the convenience store",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds, 24-hour convenience store entrance at night, cool white store light, glass reflections, quiet urban sidewalk, sparse pedestrians, subdued city atmosphere, medium shot, walking slowly near convenience store entrance while talking on the phone, scanning the street, guarded but emotionally drawn in, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, busy crowd, heavy traffic, action movie pose, horror vibe"
+      },
+      "resolved_render": {
+        "workflow_id": "night-street",
+        "workflow_file": "workflows/comfyui/baselines/baseline-night-street-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101014,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.5,
+          "street_mood_strength": 0.75
+        },
+        "notes": "street scanning should feel intimate, not action-oriented"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "女主（电话）",
+            "text": "你今天比昨晚好一点。至少记得买喝的了。",
+            "type": "phone_voice",
+            "lang": "zh"
+          },
+          {
+            "speaker": "男主",
+            "text": "你到底在哪儿？",
+            "type": "normal",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "phone_voice",
+            "text": "你今天比昨晚好一点。至少记得买喝的了。",
+            "anchor_zone": "upper_left"
+          },
+          {
+            "type": "normal",
+            "text": "你到底在哪儿？",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p14.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p14.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p15",
+      "sequence": 15,
+      "location_id": "convenience_store_front",
+      "scene_description": "close-up, male lead stops and softly asks how long she has known him",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds, 24-hour convenience store entrance at night, cool white store light, glass reflections, quiet urban sidewalk, sparse pedestrians, subdued city atmosphere, close-up on quiet night street, blurred city lights behind him, expression softened by curiosity and attraction, intimate emotional tension, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, overdramatic expression, distorted face, cluttered neon background"
+      },
+      "resolved_render": {
+        "workflow_id": "night-street",
+        "workflow_file": "workflows/comfyui/baselines/baseline-night-street-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101015,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.45,
+          "street_mood_strength": 0.8
+        },
+        "notes": "close-up should preserve emotional softness"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "男主",
+            "text": "你认识我多久了？",
+            "type": "normal",
+            "lang": "zh"
+          },
+          {
+            "speaker": "女主（电话）",
+            "text": "比你想的久。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "normal",
+            "text": "你认识我多久了？",
+            "anchor_zone": "upper_left"
+          },
+          {
+            "type": "phone_voice",
+            "text": "比你想的久。",
+            "anchor_zone": "upper_right"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p15.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p15.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    },
+    {
+      "panel_id": "p16",
+      "sequence": 16,
+      "location_id": "night_intersection",
+      "scene_description": "medium wide shot, male lead stands alone under a streetlamp at an empty intersection with strong negative space",
+      "resolved_prompt": {
+        "positive": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds, empty urban intersection at night, streetlamp glow, blue-gray night tone, faint car lights in distance, open space, suspenseful quiet atmosphere, medium wide shot, standing alone under a streetlamp, open composition with negative space, unseen feminine presence implied, suspenseful romantic noir mood, semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+        "negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed, crowded crossing, obvious female figure, ghost horror effect, action scene, monster presence"
+      },
+      "resolved_render": {
+        "workflow_id": "night-street",
+        "workflow_file": "workflows/comfyui/baselines/baseline-night-street-v1.json",
+        "model_id": "Deliberate_v2.safetensors",
+        "core": {
+          "seed": 101016,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.8,
+          "street_mood_strength": 0.7
+        },
+        "notes": "leave enough empty space for final hook text"
+      },
+      "text_content": {
+        "dialogue": [
+          {
+            "speaker": "女主（电话）",
+            "text": "明晚十一点十七分。你会在这个路口见到我。",
+            "type": "phone_voice",
+            "lang": "zh"
+          }
+        ],
+        "narration": [],
+        "bubble_plan": [
+          {
+            "type": "phone_voice",
+            "text": "明晚十一点十七分。你会在这个路口见到我。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/chapter_01/p16.png",
+        "final_image_path": "output/final_comic/strange_call/chapter_01/p16.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": "keep enough empty space for final hook text"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# macOS metadata
+.DS_Store
+._*
+
+# Dependencies
+/node_modules/
+
+# Local rendering runtime and models
+/ComfyUI/
+
+# Generated outputs
+/output/
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp

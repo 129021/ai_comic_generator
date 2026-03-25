@@ -1,0 +1,385 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Highres v4 office teacher workflow: majicMIX v7 with tighter second-pass denoise, stronger composition anchoring, softer style takeover, and a cleaner office-storytelling bias for the current Asian-face reference test.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 202708,
+        "steps": 22,
+        "cfg": 6.6,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "27",
+          0
+        ],
+        "positive": [
+          "20",
+          0
+        ],
+        "negative": [
+          "20",
+          1
+        ],
+        "latent_image": [
+          "14",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Stage 1 KSampler"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Main Checkpoint"
+      }
+    },
+    "5": {
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "preset": "FACEID",
+        "lora_strength": 0.46,
+        "provider": "CPU"
+      },
+      "class_type": "IPAdapterUnifiedLoaderFaceID",
+      "_meta": {
+        "title": "IPAdapter Unified Loader FaceID"
+      }
+    },
+    "6": {
+      "inputs": {
+        "image": "woman_model.jpg"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Reference Face Image"
+      }
+    },
+    "7": {
+      "inputs": {
+        "provider": "CPU",
+        "model_name": "buffalo_l"
+      },
+      "class_type": "IPAdapterInsightFaceLoader",
+      "_meta": {
+        "title": "InsightFace Loader"
+      }
+    },
+    "8": {
+      "inputs": {
+        "model": [
+          "5",
+          0
+        ],
+        "ipadapter": [
+          "5",
+          1
+        ],
+        "image": [
+          "6",
+          0
+        ],
+        "weight": 0.74,
+        "weight_faceidv2": 0.96,
+        "weight_type": "linear",
+        "combine_embeds": "concat",
+        "start_at": 0,
+        "end_at": 0.84,
+        "embeds_scaling": "K+V",
+        "insightface": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "IPAdapterFaceID",
+      "_meta": {
+        "title": "IPAdapter FaceID"
+      }
+    },
+    "9": {
+      "inputs": {
+        "model": [
+          "8",
+          0
+        ],
+        "preset": "PLUS (high strength)"
+      },
+      "class_type": "IPAdapterUnifiedLoader",
+      "_meta": {
+        "title": "IPAdapter Unified Loader Style"
+      }
+    },
+    "10": {
+      "inputs": {
+        "image": "reference.jpeg"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Reference Outfit Image"
+      }
+    },
+    "11": {
+      "inputs": {
+        "image": "reference.jpeg"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Reference Composition Image"
+      }
+    },
+    "12": {
+      "inputs": {
+        "text": "high-quality 3d office heroine render",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Positive Prompt"
+      }
+    },
+    "13": {
+      "inputs": {
+        "text": "text, watermark, cartoon, blurry, low quality",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "Negative Prompt"
+      }
+    },
+    "14": {
+      "inputs": {
+        "width": 512,
+        "height": 768,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "Base Latent"
+      }
+    },
+    "15": {
+      "inputs": {
+        "samples": [
+          "22",
+          0
+        ],
+        "vae": [
+          "17",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE Decode"
+      }
+    },
+    "16": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "15",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "Save Image"
+      }
+    },
+    "17": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    },
+    "18": {
+      "inputs": {
+        "image": "female_teacher_office_pose_map.png"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Pose Map Image"
+      }
+    },
+    "19": {
+      "inputs": {
+        "control_net_name": "control_v11p_sd15_openpose_fp16.safetensors"
+      },
+      "class_type": "ControlNetLoader",
+      "_meta": {
+        "title": "OpenPose ControlNet"
+      }
+    },
+    "20": {
+      "inputs": {
+        "positive": [
+          "12",
+          0
+        ],
+        "negative": [
+          "13",
+          0
+        ],
+        "control_net": [
+          "19",
+          0
+        ],
+        "image": [
+          "18",
+          0
+        ],
+        "strength": 0.76,
+        "start_percent": 0,
+        "end_percent": 0.84,
+        "vae": [
+          "4",
+          2
+        ]
+      },
+      "class_type": "ControlNetApplyAdvanced",
+      "_meta": {
+        "title": "Apply OpenPose Control"
+      }
+    },
+    "21": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "upscale_method": "bislerp",
+        "scale_by": 2
+      },
+      "class_type": "LatentUpscaleBy",
+      "_meta": {
+        "title": "Latent Upscale 2x"
+      }
+    },
+    "22": {
+      "inputs": {
+        "seed": 202708,
+        "steps": 12,
+        "cfg": 6.2,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 0.28,
+        "model": [
+          "27",
+          0
+        ],
+        "positive": [
+          "20",
+          0
+        ],
+        "negative": [
+          "20",
+          1
+        ],
+        "latent_image": [
+          "21",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "Stage 2 Highres KSampler"
+      }
+    },
+    "26": {
+      "inputs": {
+        "model": [
+          "9",
+          0
+        ],
+        "ipadapter": [
+          "9",
+          1
+        ],
+        "image": [
+          "11",
+          0
+        ],
+        "weight": 0.36,
+        "weight_type": "composition precise",
+        "combine_embeds": "average",
+        "start_at": 0,
+        "end_at": 0.72,
+        "embeds_scaling": "K+V"
+      },
+      "class_type": "IPAdapterAdvanced",
+      "_meta": {
+        "title": "IPAdapter Composition Control"
+      }
+    },
+    "27": {
+      "inputs": {
+        "model": [
+          "26",
+          0
+        ],
+        "ipadapter": [
+          "9",
+          1
+        ],
+        "image": [
+          "10",
+          0
+        ],
+        "weight": 0.52,
+        "weight_type": "style transfer precise",
+        "combine_embeds": "average",
+        "start_at": 0,
+        "end_at": 0.54,
+        "embeds_scaling": "K+V"
+      },
+      "class_type": "IPAdapterAdvanced",
+      "_meta": {
+        "title": "IPAdapter Style Transfer"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "12", "input_name": "text" },
+    "negative_prompt": { "node_id": "13", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "14", "input_name": "width" },
+    "height": { "node_id": "14", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "16", "input_name": "filename_prefix" },
+    "scene_tuning": {
+      "reference_image_path": { "node_id": "6", "input_name": "image" },
+      "pose_map_path": { "node_id": "18", "input_name": "image" },
+      "style_reference_path": { "node_id": "10", "input_name": "image" },
+      "composition_reference_path": { "node_id": "11", "input_name": "image" },
+      "faceid_lora_strength": { "node_id": "5", "input_name": "lora_strength" },
+      "faceid_weight": { "node_id": "8", "input_name": "weight" },
+      "faceid_weight_faceidv2": { "node_id": "8", "input_name": "weight_faceidv2" },
+      "controlnet_strength": { "node_id": "20", "input_name": "strength" }
+    }
+  },
+  "result_node_id": "16"
+}

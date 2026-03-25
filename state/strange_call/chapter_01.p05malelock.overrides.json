@@ -1,0 +1,13 @@
+{
+  "panels": {
+    "p05": {
+      "render_profile": {
+        "notes": "male-lock test for p05; prioritize ordinary male office worker face and avoid feminine drift"
+      },
+      "prompt_build": {
+        "local_positive": "male face close-up, ordinary East Asian male office worker, hearing a soft female voice, surprised but restrained emotional shift, intimate atmosphere, masculine facial structure, subtle jawline, slightly tired male eyes, natural male features",
+        "local_negative": "overacting, screaming expression, asymmetrical eyes, female, woman, feminine face, soft beauty makeup, lipstick, pretty girl, delicate female portrait, androgynous idol look, couple photo, romance poster"
+      }
+    }
+  }
+}

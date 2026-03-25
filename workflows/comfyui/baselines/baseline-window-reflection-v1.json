@@ -1,0 +1,108 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Window reflection baseline workflow backed by a minimal real ComfyUI API workflow for p10-style reflective panels.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 101010,
+        "steps": 24,
+        "cfg": 6.5,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": ["4", 0],
+        "positive": ["6", 0],
+        "negative": ["7", 0],
+        "latent_image": ["5", 0]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Checkpoint加载器（简易）"
+      }
+    },
+    "5": {
+      "inputs": {
+        "width": 768,
+        "height": 1152,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "空Latent图像"
+      }
+    },
+    "6": {
+      "inputs": {
+        "text": "young East Asian man reflected in apartment window glass at night, faint feminine visual hint beside him, mysterious young East Asian woman implied through visual fragments only, long dark hair, pale skin tone, soft feminine silhouette, blurred reflection, ambiguous intimate presence, dreamy noir mood, reflective close-up, semi-realistic cinematic comic style, urban night atmosphere, soft realistic shading, controlled color palette, high detail, vertical webtoon panel composition",
+        "clip": ["4", 1]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "7": {
+      "inputs": {
+        "text": "low quality, blurry, bad anatomy, extra fingers, extra limbs, distorted face, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, text, watermark, clear full female face, full body reveal, ghost horror effect, monster features, supernatural horror creature, gore",
+        "clip": ["4", 1]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "8": {
+      "inputs": {
+        "samples": ["3", 0],
+        "vae": ["10", 0]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": ["8", 0]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    },
+    "10": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "9", "input_name": "filename_prefix" },
+    "scene_tuning": {}
+  },
+  "result_node_id": "9"
+}

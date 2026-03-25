@@ -1,0 +1,17 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "photoreal_window_majicmix_test",
+  "updated_at": "2026-03-24T16:08:36.353Z",
+  "panels": [
+    {
+      "panel_id": "r01",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/photoreal_window_majicmix_test/r01.png",
+      "workflow_id": "photoreal-majicmix",
+      "workflow_file": "workflows/comfyui/baselines/baseline-photoreal-majicmix-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-24T16:08:36.353Z",
+      "last_error": ""
+    }
+  ]
+}

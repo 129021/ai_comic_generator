@@ -1,0 +1,205 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Window reflection workflow with lighter FaceID only, designed to preserve reference-face direction while allowing wider outfit-readable compositions.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 202601,
+        "steps": 22,
+        "cfg": 6.6,
+        "sampler_name": "dpmpp_2m",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "8",
+          0
+        ],
+        "positive": [
+          "12",
+          0
+        ],
+        "negative": [
+          "13",
+          0
+        ],
+        "latent_image": [
+          "14",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Checkpoint加载器（简易）"
+      }
+    },
+    "5": {
+      "inputs": {
+        "model": [
+          "4",
+          0
+        ],
+        "preset": "FACEID",
+        "lora_strength": 0.45,
+        "provider": "CPU"
+      },
+      "class_type": "IPAdapterUnifiedLoaderFaceID",
+      "_meta": {
+        "title": "IPAdapter Unified Loader FaceID"
+      }
+    },
+    "6": {
+      "inputs": {
+        "image": "woman_model.jpg"
+      },
+      "class_type": "LoadImage",
+      "_meta": {
+        "title": "Load Image"
+      }
+    },
+    "7": {
+      "inputs": {
+        "provider": "CPU",
+        "model_name": "buffalo_l"
+      },
+      "class_type": "IPAdapterInsightFaceLoader",
+      "_meta": {
+        "title": "IPAdapter InsightFace Loader"
+      }
+    },
+    "8": {
+      "inputs": {
+        "model": [
+          "5",
+          0
+        ],
+        "ipadapter": [
+          "5",
+          1
+        ],
+        "image": [
+          "6",
+          0
+        ],
+        "weight": 0.62,
+        "weight_faceidv2": 0.82,
+        "weight_type": "linear",
+        "combine_embeds": "concat",
+        "start_at": 0,
+        "end_at": 0.82,
+        "embeds_scaling": "K+V",
+        "insightface": [
+          "7",
+          0
+        ]
+      },
+      "class_type": "IPAdapterFaceID",
+      "_meta": {
+        "title": "IPAdapter FaceID"
+      }
+    },
+    "12": {
+      "inputs": {
+        "text": "young East Asian woman by the apartment window at night, three-quarter body visible, high-quality 3d comic render",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "13": {
+      "inputs": {
+        "text": "low quality, blurry, distorted face, text, watermark, extreme close-up portrait",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "14": {
+      "inputs": {
+        "width": 768,
+        "height": 1152,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "空Latent图像"
+      }
+    },
+    "15": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "17",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "16": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "15",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    },
+    "17": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "12", "input_name": "text" },
+    "negative_prompt": { "node_id": "13", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "14", "input_name": "width" },
+    "height": { "node_id": "14", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "16", "input_name": "filename_prefix" },
+    "scene_tuning": {
+      "reference_image_path": { "node_id": "6", "input_name": "image" },
+      "faceid_lora_strength": { "node_id": "5", "input_name": "lora_strength" },
+      "faceid_weight": { "node_id": "8", "input_name": "weight" },
+      "faceid_weight_faceidv2": { "node_id": "8", "input_name": "weight_faceidv2" }
+    }
+  },
+  "result_node_id": "16"
+}

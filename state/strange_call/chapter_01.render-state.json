@@ -1,0 +1,47 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "chapter_01",
+  "updated_at": "2026-03-23T14:53:32.586Z",
+  "panels": [
+    {
+      "panel_id": "p01",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p01.png",
+      "workflow_id": "bedroom-night",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T14:53:32.570Z",
+      "last_error": ""
+    },
+    {
+      "panel_id": "p04",
+      "status": "failed",
+      "output_path": "output/base_images/strange_call/chapter_01/p04.png",
+      "workflow_id": "bedroom-night-pose",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-pose-v1.json",
+      "renderer": "unknown",
+      "updated_at": "2026-03-22T14:41:03.451Z",
+      "last_error": "Timed out waiting for ComfyUI history for prompt b99a6669-2db3-412f-867a-a1ee5ce687c9."
+    },
+    {
+      "panel_id": "p05",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p05.png",
+      "workflow_id": "bedroom-night-sdxl",
+      "workflow_file": "workflows/comfyui/baselines/baseline-bedroom-night-sdxl-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-23T11:09:32.321Z",
+      "last_error": ""
+    },
+    {
+      "panel_id": "p10",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/chapter_01/p10.png",
+      "workflow_id": "window-reflection",
+      "workflow_file": "workflows/comfyui/baselines/baseline-window-reflection-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-22T14:58:26.731Z",
+      "last_error": ""
+    }
+  ]
+}

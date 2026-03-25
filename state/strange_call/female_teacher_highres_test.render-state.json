@@ -1,0 +1,17 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "female_teacher_highres_test",
+  "updated_at": "2026-03-24T15:34:07.076Z",
+  "panels": [
+    {
+      "panel_id": "t01",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/female_teacher_highres_test/t01.png",
+      "workflow_id": "office-teacher-highres-v3",
+      "workflow_file": "workflows/comfyui/baselines/baseline-office-teacher-highres-v3.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-24T15:34:07.023Z",
+      "last_error": ""
+    }
+  ]
+}

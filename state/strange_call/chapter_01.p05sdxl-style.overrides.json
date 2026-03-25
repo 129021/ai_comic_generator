@@ -1,0 +1,24 @@
+{
+  "panels": {
+    "p05": {
+      "render_profile": {
+        "workflow_id": "bedroom-night-sdxl",
+        "model_id": "sdxl-base-1.0",
+        "core": {
+          "seed": 101005,
+          "width": 640,
+          "height": 960,
+          "steps": 22,
+          "cfg": 5.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "notes": "sdxl style-correction test for p05; prioritize realistic male close-up, no anime drift"
+      },
+      "prompt_build": {
+        "local_positive": "realistic male close-up reaction shot, ordinary East Asian male office worker, hearing a soft female voice, surprised but restrained emotional shift, intimate atmosphere, cinematic still, realistic skin, natural lighting, real-person proportions, subtle jawline, slightly tired male eyes",
+        "local_negative": "anime, manga, illustration, cel shading, comic line art, cartoon, stylized drawing, feminine face, soft beauty makeup, lipstick, pretty girl, delicate female portrait, androgynous idol look, extra people"
+      }
+    }
+  }
+}

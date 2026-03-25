@@ -1,0 +1,130 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Bedroom night web workflow adapted from an imported majicMIX UI workflow with 8x upscaler and negative embeddings.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 101001,
+        "steps": 20,
+        "cfg": 7,
+        "sampler_name": "euler",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "4",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "5",
+          0
+        ]
+      },
+      "class_type": "KSampler"
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "Deliberate_v2.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple"
+    },
+    "5": {
+      "inputs": {
+        "width": 256,
+        "height": 384,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage"
+    },
+    "6": {
+      "inputs": {
+        "text": "young East Asian man in a bedroom at night",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "7": {
+      "inputs": {
+        "text": "ng_deepnegative_v1_75t,(badhandv4:1.2),EasyNegative,(worst quality:1.35),",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode"
+    },
+    "8": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "14",
+          0
+        ]
+      },
+      "class_type": "VAEDecode"
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "p01_web",
+        "images": [
+          "12",
+          0
+        ]
+      },
+      "class_type": "SaveImage"
+    },
+    "12": {
+      "inputs": {
+        "upscale_model": [
+          "13",
+          0
+        ],
+        "image": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "ImageUpscaleWithModel"
+    },
+    "13": {
+      "inputs": {
+        "model_name": "8x-NMKD-Superscale_150000_G.pth"
+      },
+      "class_type": "UpscaleModelLoader"
+    },
+    "14": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader"
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "9", "input_name": "filename_prefix" },
+    "scene_tuning": {}
+  },
+  "result_node_id": "9"
+}

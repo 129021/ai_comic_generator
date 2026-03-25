@@ -1,0 +1,135 @@
+{
+  "template_format": "comfyui-api-workflow-v1",
+  "description": "Prompt-only photoreal majicMIX benchmark for testing near-real human rendering without the office control stack or second-pass refinement.",
+  "api_workflow": {
+    "3": {
+      "inputs": {
+        "seed": 441778010,
+        "steps": 40,
+        "cfg": 4.5,
+        "sampler_name": "dpmpp_3m_sde",
+        "scheduler": "karras",
+        "denoise": 1,
+        "model": [
+          "4",
+          0
+        ],
+        "positive": [
+          "6",
+          0
+        ],
+        "negative": [
+          "7",
+          0
+        ],
+        "latent_image": [
+          "5",
+          0
+        ]
+      },
+      "class_type": "KSampler",
+      "_meta": {
+        "title": "K采样器"
+      }
+    },
+    "4": {
+      "inputs": {
+        "ckpt_name": "majicMIX realistic 麦橘写实_v7.safetensors"
+      },
+      "class_type": "CheckpointLoaderSimple",
+      "_meta": {
+        "title": "Checkpoint加载器（简易）"
+      }
+    },
+    "5": {
+      "inputs": {
+        "width": 768,
+        "height": 1152,
+        "batch_size": 1
+      },
+      "class_type": "EmptyLatentImage",
+      "_meta": {
+        "title": "空Latent图像"
+      }
+    },
+    "6": {
+      "inputs": {
+        "text": "1girl, beautiful East Asian woman in her 20s, long brown-black hair, soft smile, upper teeth slightly visible, big brown eyes, subtle blush, near-real skin, lustrous skin, slim body, narrow waist, elegant legs, solo focus, wearing a fitted red dress, black pantyhose, red high heels, squatting on wooden floor in front of a large bright window, grey curtain, strong soft backlight, bright daylight theme, shallow depth of field, realistic perspective, masterpiece, ultra-detailed, highly detailed CG illustration, best quality, high quality texture, intricate details, realistic face, realistic hair strands, realistic cloth folds, cinematic photography look",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "7": {
+      "inputs": {
+        "text": "hat, glove, collar, nail polish, choker, paintings, sketches, worst quality, low quality, normal quality, lowres, monochrome, grayscale, skin spots, acne, skin blemishes, age spot, extra fingers, fewer fingers, bad hands, blurry, deformed anatomy, duplicate limbs, watermark, text, logo, comic text, exaggerated anime face, heavy illustration look",
+        "clip": [
+          "4",
+          1
+        ]
+      },
+      "class_type": "CLIPTextEncode",
+      "_meta": {
+        "title": "CLIP文本编码"
+      }
+    },
+    "8": {
+      "inputs": {
+        "samples": [
+          "3",
+          0
+        ],
+        "vae": [
+          "10",
+          0
+        ]
+      },
+      "class_type": "VAEDecode",
+      "_meta": {
+        "title": "VAE解码"
+      }
+    },
+    "9": {
+      "inputs": {
+        "filename_prefix": "ComfyUI",
+        "images": [
+          "8",
+          0
+        ]
+      },
+      "class_type": "SaveImage",
+      "_meta": {
+        "title": "保存图像"
+      }
+    },
+    "10": {
+      "inputs": {
+        "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+      },
+      "class_type": "VAELoader",
+      "_meta": {
+        "title": "Load VAE"
+      }
+    }
+  },
+  "bindings": {
+    "positive_prompt": { "node_id": "6", "input_name": "text" },
+    "negative_prompt": { "node_id": "7", "input_name": "text" },
+    "seed": { "node_id": "3", "input_name": "seed" },
+    "steps": { "node_id": "3", "input_name": "steps" },
+    "cfg": { "node_id": "3", "input_name": "cfg" },
+    "sampler_name": { "node_id": "3", "input_name": "sampler_name" },
+    "scheduler": { "node_id": "3", "input_name": "scheduler" },
+    "width": { "node_id": "5", "input_name": "width" },
+    "height": { "node_id": "5", "input_name": "height" },
+    "model_id": { "node_id": "4", "input_name": "ckpt_name" },
+    "output_prefix": { "node_id": "9", "input_name": "filename_prefix" },
+    "scene_tuning": {}
+  },
+  "result_node_id": "9"
+}

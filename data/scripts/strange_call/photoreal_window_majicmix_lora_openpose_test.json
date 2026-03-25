@@ -1,0 +1,60 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "photoreal_window_majicmix_lora_openpose_test",
+  "chapter_title": "真人感窗口人像 LoRA OpenPose 测试",
+  "style_profile": {
+    "global_positive": "photorealistic, realistic skin texture, realistic skin pores, cinematic daylight, soft backlight, realistic depth of field, premium texture detail, realistic photography look",
+    "global_negative": "cartoon, 2d, painting, illustration, overprocessed beauty skin, plastic skin, low quality, worst quality, blurry, deformed anatomy, extra fingers, text, watermark"
+  },
+  "character_anchors": {
+    "window_woman": "beautiful East Asian woman, long brown-black hair, delicate facial proportions, brown eyes, natural lips, realistic eyelashes"
+  },
+  "scene_anchors": {
+    "window_daylight": "large bright window, grey curtain, soft daylight, wooden floor, indoor natural light, airy apartment interior"
+  },
+  "panels": [
+    {
+      "panel_id": "r08",
+      "sequence": 1,
+      "location_id": "window_daylight",
+      "characters": ["window_woman"],
+      "render_profile": {
+        "workflow_id": "photoreal-majicmix-lora-openpose",
+        "model_id": "majicmix-realistic-v7",
+        "core": {
+          "seed": 441778010,
+          "width": 512,
+          "height": 768,
+          "steps": 40,
+          "cfg": 4.5,
+          "sampler_name": "dpmpp_3m_sde",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "pose_map_path": "output/pose_maps/r06_pose_map.png",
+          "controlnet_strength": 0.28
+        },
+        "notes": "Photoreal LoRA OpenPose test: keep the r06 realism baseline, add low-strength pose control from the extracted r06 SDPose map, and test whether pose locking reduces dress drift while we ask for more continuous pantyhose semantics."
+      },
+      "scene_description": "near-real full-body portrait of an East Asian woman squatting by a bright window in a red dress, black pantyhose, and red heels",
+      "prompt_build": {
+        "character_refs": ["window_woman"],
+        "scene_ref": "window_daylight",
+        "local_positive": "full-body composition, squatting pose, looking back toward camera, clearly wearing a fitted long-sleeve red dress made of visible red fabric, dress fully covering torso, waist and hips, black semi-sheer pantyhose clearly covering both legs, pantyhose continuous over hips and thighs, avoid visible stocking band, clearly visible red ankle-strap high heels with red shoe body and red heel, soft smile, realistic skin, realistic knees and hands, bright window rim light, grey curtains, clean wood floor, shallow depth of field, natural feminine pose, very close to real photo, clothed fashion portrait, no fabric draped around body, elegant fashion photo finish",
+        "local_negative": "office props, smartphone, empty limbs, duplicate body parts, broken hands, anime face, heavy cel shading, exaggerated giant eyes, posterized skin, oversharpened edges, white cloth, cream cloth, beige cloth, blanket, towel, shawl, wrap dress made from loose fabric, nude shoulder wrap, exposed shoulders, off-shoulder cream garment, white dress, ivory dress, bathrobe, thighhighs, thigh-highs, stockings, stocking tops, garter belt, exposed upper thigh, visible thigh band, black shoes, black pumps, dark heels, fully black footwear"
+      },
+      "dialogue": [],
+      "narration": ["这一版开始测试低强度姿态控制，看看能不能在不伤整体质感的前提下稳住服装结构。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "这一版开始测试低强度姿态控制，看看能不能在不伤整体质感的前提下稳住服装结构。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    }
+  ]
+}

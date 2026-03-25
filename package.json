@@ -1,0 +1,20 @@
+{
+  "name": "ai-comic-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "script:resolve": "node src/cli/resolve.ts",
+    "render:panel": "node src/cli/render-panel.ts",
+    "render:chapter": "node src/cli/render-chapter.ts",
+    "preview:panel": "FAST_PREVIEW=1 node src/cli/render-panel.ts",
+    "preview:chapter": "FAST_PREVIEW=1 node src/cli/render-chapter.ts",
+    "typeset:panel": "node src/cli/typeset-panel.ts",
+    "typeset:chapter": "node src/cli/typeset-chapter.ts",
+    "preview:typeset:panel": "FAST_PREVIEW=1 node src/cli/typeset-panel.ts",
+    "preview:typeset:chapter": "FAST_PREVIEW=1 node src/cli/typeset-chapter.ts"
+  },
+  "dependencies": {
+    "puppeteer": "^24.40.0"
+  }
+}

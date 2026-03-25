@@ -1,0 +1,14 @@
+{
+  "panels": {
+    "p04": {
+      "render_profile": {
+        "workflow_id": "bedroom-night-pose",
+        "notes": "pose-control test using SDPose + OpenPose ControlNet to force phone-call posture"
+      },
+      "prompt_build": {
+        "local_positive": "holding smartphone to ear while answering a call, body slightly tense, intimate suspense, soft shadows, side profile, upper body medium close-up",
+        "local_negative": "awkward ear-phone placement, distorted mouth, broken jawline, pen, stylus, pencil, feminine face, androgynous idol look, glamour portrait, fashion photography"
+      }
+    }
+  }
+}

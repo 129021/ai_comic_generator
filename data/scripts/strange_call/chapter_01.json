@@ -1,0 +1,814 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "chapter_01",
+  "chapter_title": "陌生来电",
+  "style_profile": {
+    "global_positive": "semi-realistic cinematic comic style, polished 3d cg look, refined korean webtoon character rendering, (3d render, CG, octane render, Unreal Engine 5:1.2), (photorealistic, physically based rendering:1.2), highly detailed textures, sharp focus, (cinematic lighting, volumetric lighting, ray tracing:1.1), (detailed skin texture, realistic skin pores:1.1), subtle micro skin variation, realistic fabric folds, clean studio-quality finish, urban night atmosphere, soft realistic shading, controlled color palette, subtle emotional storytelling, clean composition, high detail, consistent character design, masterpiece, best quality, vertical webtoon panel composition",
+    "global_negative": "nsfw, nude, naked, lowres, low quality, blurry, bad anatomy, bad hands, extra fingers, extra limbs, distorted face, missing fingers, extra digit, fewer digits, cropped, worst quality, jpeg artifacts, signature, watermark, text, error, inconsistent character design, exaggerated expression, messy background, overexposed lighting, fantasy elements, (illustration, painting, 2d, anime, cartoon, sketch, watercolor:1.4), (smooth skin, plastic skin:1.2), flat lighting, overexposed"
+  },
+  "character_anchors": {
+    "male_indoor": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a dark gray (cotton fabric texture:1.1) loose T-shirt with visible knit texture and natural fabric folds, soft home pants with realistic cloth thickness",
+    "male_outdoor": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds",
+    "female_implied": "mysterious young East Asian woman implied through visual fragments only, long dark hair, pale skin tone, slender fingers, soft feminine silhouette, intimate and calm presence, subtle sensual tension"
+  },
+  "scene_anchors": {
+    "bedroom": "small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere",
+    "window_corner": "apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface",
+    "convenience_store_front": "24-hour convenience store entrance at night, cool white store light, glass reflections, quiet urban sidewalk, sparse pedestrians, subdued city atmosphere",
+    "night_intersection": "empty urban intersection at night, streetlamp glow, blue-gray night tone, faint car lights in distance, open space, suspenseful quiet atmosphere"
+  },
+  "panels": [
+    {
+      "panel_id": "p01",
+      "sequence": 1,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101001,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "primary face-locked bedroom establishing shot"
+      },
+      "scene_description": "wide establishing shot, male lead alone in bedroom late at night, scrolling on his phone",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "wide establishing shot, male lead alone late at night, scrolling on his phone, late night loneliness, handsome young male lead, polished korean webtoon cg aesthetic, clean facial rendering",
+        "local_negative": "duplicate person, extra person, mirrored body, split composition"
+      },
+      "dialogue": [],
+      "narration": ["他最近总在凌晨以后才真正安静下来。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "他最近总在凌晨以后才真正安静下来。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p02",
+      "sequence": 2,
+      "location_id": "bedroom",
+      "characters": [],
+      "render_profile": {
+        "workflow_id": "bedroom-night-basic",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101002,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {},
+        "notes": "phone screen close-up should remain clean and readable in composition"
+      },
+      "scene_description": "extreme close-up of the phone screen showing an unknown incoming call",
+      "prompt_build": {
+        "character_refs": [],
+        "scene_ref": "bedroom",
+        "local_positive": "extreme close-up of smartphone incoming call screen, unknown caller, dramatic phone glow in darkness, minimalist suspense composition",
+        "local_negative": "blurry screen, unreadable interface, cluttered UI"
+      },
+      "dialogue": [],
+      "narration": [],
+      "bubble_plan": [],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p03",
+      "sequence": 3,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101003,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "face lock should hold while preserving hesitation and hand positioning"
+      },
+      "scene_description": "close medium shot, male lead hesitates with finger hovering above the answer button",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "close medium shot, finger hovering above phone, suspicious and hesitant mood, warm lamp light mixed with cool phone light",
+        "local_negative": "bad hands, broken fingers, exaggerated shock"
+      },
+      "dialogue": [],
+      "narration": ["这么晚了？"],
+      "bubble_plan": [
+        {
+          "type": "thought",
+          "text": "这么晚了？",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p04",
+      "sequence": 4,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101004,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.72
+        },
+        "notes": "face lock should support the close-up phone reaction without over-stylizing"
+      },
+      "scene_description": "close-up side profile, male lead answers the phone in a darkened bedroom",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "close-up side profile while answering phone, body slightly tense, intimate suspense, soft shadows, dark gray cotton knit T-shirt, visible seam lines, subtle cloth thickness, natural shirt wrinkles around shoulder and chest, matte fabric response, realistic cloth folds, detailed skin texture, realistic skin pores, subtle under-eye texture",
+        "local_negative": "awkward ear-phone placement, distorted mouth, broken jawline, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, beauty retouching"
+      },
+      "dialogue": [
+        {
+          "speaker": "男主",
+          "text": "喂？",
+          "type": "normal"
+        },
+        {
+          "speaker": "女主（电话）",
+          "text": "你终于接了。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "normal",
+          "text": "喂？",
+          "anchor_zone": "upper_left"
+        },
+        {
+          "type": "phone_voice",
+          "text": "你终于接了。",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p05",
+      "sequence": 5,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101005,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.94,
+          "faceid_weight_faceidv2": 1.25,
+          "controlnet_strength": 0.7
+        },
+        "notes": "use stronger face lock for the close-up emotional reaction shot"
+      },
+      "scene_description": "face close-up, male lead reacts to the softness of the female voice",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "face close-up, hearing a soft female voice, surprised but restrained emotional shift, intimate atmosphere, dark gray cotton knit T-shirt collar visible near neck, visible shirt seam, natural cloth thickness, realistic fabric fold near collarbone, detailed skin texture, realistic skin pores, subtle lip texture, faint under-eye texture, natural facial micro detail",
+        "local_negative": "overacting, screaming expression, asymmetrical eyes, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, beauty retouching"
+      },
+      "dialogue": [
+        {
+          "speaker": "女主（电话）",
+          "text": "我还以为你今晚也不打算理人。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "phone_voice",
+          "text": "我还以为你今晚也不打算理人。",
+          "anchor_zone": "top_center"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p06",
+      "sequence": 6,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101006,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.9,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.75
+        },
+        "notes": "face lock should support upright posture and guarded expression"
+      },
+      "scene_description": "medium shot, male lead sits upright on the bed and questions the caller",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "medium shot, sitting upright on bed, defensive posture, focused and guarded expression, dim room tension",
+        "local_negative": "stiff body, broken shoulders, extra arms"
+      },
+      "dialogue": [
+        {
+          "speaker": "男主",
+          "text": "你是谁？",
+          "type": "normal"
+        },
+        {
+          "speaker": "女主（电话）",
+          "text": "先别急着问这个。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "normal",
+          "text": "你是谁？",
+          "anchor_zone": "upper_left"
+        },
+        {
+          "type": "phone_voice",
+          "text": "先别急着问这个。",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p07",
+      "sequence": 7,
+      "location_id": "bedroom",
+      "characters": [],
+      "render_profile": {
+        "workflow_id": "bedroom-night-basic",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101007,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {},
+        "notes": "preserve object realism and room mood"
+      },
+      "scene_description": "object close-up of unopened rice ball and half glass of water on the desk",
+      "prompt_build": {
+        "character_refs": [],
+        "scene_ref": "bedroom",
+        "local_positive": "object close-up of unopened convenience store rice ball and half glass of water on desk, eerie domestic realism, lonely room detail",
+        "local_negative": "cluttered desk, unreadable package design, distorted objects"
+      },
+      "dialogue": [
+        {
+          "speaker": "女主（电话）",
+          "text": "你今晚又没吃东西。饭团买了，也没拆。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "phone_voice",
+          "text": "你今晚又没吃东西。饭团买了，也没拆。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p08",
+      "sequence": 8,
+      "location_id": "bedroom",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "bedroom-night",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101008,
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+          "faceid_lora_strength": 0.65,
+          "faceid_weight": 0.92,
+          "faceid_weight_faceidv2": 1.2,
+          "controlnet_strength": 0.72
+        },
+        "notes": "face lock should hold during the sudden turn while keeping the frame readable"
+      },
+      "scene_description": "close-up, male lead turns sharply toward the desk after hearing the impossible detail",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "bedroom",
+        "local_positive": "close-up, turning sharply toward the desk, shocked and uneasy expression, dim bedroom tension",
+        "local_negative": "twisted neck, broken shoulders, exaggerated horror face, motion blur mess"
+      },
+      "dialogue": [
+        {
+          "speaker": "男主",
+          "text": "你在我家？",
+          "type": "normal"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "normal",
+          "text": "你在我家？",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p09",
+      "sequence": 9,
+      "location_id": "window_corner",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "window-reflection",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101009,
+          "width": 1024,
+          "height": 1536,
+          "steps": 30,
+          "cfg": 6.8,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.2,
+          "reflection_softness": 0.45
+        },
+        "notes": "male lead should dominate the frame, reflection remains subtle"
+      },
+      "scene_description": "medium wide shot from behind, male lead pulls aside the curtain and checks outside",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "window_corner",
+        "local_positive": "medium wide shot from behind, one hand holding phone and the other pulling curtain aside, paranoid and searching mood",
+        "local_negative": "crowded city view, fantasy skyline, horror lighting"
+      },
+      "dialogue": [
+        {
+          "speaker": "女主（电话）",
+          "text": "没有。",
+          "type": "phone_voice"
+        },
+        {
+          "speaker": "女主（电话）",
+          "text": "我只是比别人更留意你。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "phone_voice",
+          "text": "没有。",
+          "anchor_zone": "upper_left"
+        },
+        {
+          "type": "phone_voice",
+          "text": "我只是比别人更留意你。",
+          "anchor_zone": "mid_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p10",
+      "sequence": 10,
+      "location_id": "window_corner",
+      "characters": ["male_indoor", "female_implied"],
+      "render_profile": {
+        "workflow_id": "window-reflection",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101010,
+          "width": 1024,
+          "height": 1536,
+          "steps": 30,
+          "cfg": 6.5,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.45,
+          "reflection_softness": 0.6
+        },
+        "notes": "do not allow full female reveal"
+      },
+      "scene_description": "reflective close-up, the male lead is visible in the glass with a faint feminine hint beside him",
+      "prompt_build": {
+        "character_refs": ["male_indoor", "female_implied"],
+        "scene_ref": "window_corner",
+        "local_positive": "reflective close-up, male face visible in glass, faint feminine hint beside him, ambiguous intimate presence, dreamy noir mood, blurred reflection, dark gray cotton knit T-shirt, visible cloth thickness at sleeve and torso, natural wrinkles, matte cotton response, realistic fabric folds, detailed skin texture, realistic skin pores, subtle facial micro detail, realistic soft skin shading",
+        "local_negative": "clear full female face, full body reveal, ghost horror effect, monster features, supernatural horror creature, gore, rubber shirt, latex clothing, flat cloth, airbrushed skin, waxy skin, plastic skin, beauty retouching"
+      },
+      "dialogue": [],
+      "narration": ["恶作剧？还是……"],
+      "bubble_plan": [
+        {
+          "type": "thought",
+          "text": "恶作剧？还是……",
+          "anchor_zone": "lower_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": "avoid making the female hint too literal"
+    },
+    {
+      "panel_id": "p11",
+      "sequence": 11,
+      "location_id": "window_corner",
+      "characters": ["male_indoor"],
+      "render_profile": {
+        "workflow_id": "window-reflection",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101011,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 6.8,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "female_implied_strength": 0.15,
+          "reflection_softness": 0.5
+        },
+        "notes": "post-call emptiness should remain the focus"
+      },
+      "scene_description": "medium shot, the call has ended and the male lead stands alone by the window staring at the dark phone screen",
+      "prompt_build": {
+        "character_refs": ["male_indoor"],
+        "scene_ref": "window_corner",
+        "local_positive": "medium shot, standing quietly by the window after the call has ended, dark phone screen in hand, emotional emptiness and lingering unease",
+        "local_negative": "dramatic crying, exaggerated sadness, cluttered background"
+      },
+      "dialogue": [],
+      "narration": ["她挂得很突然。安静却没有回来。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "她挂得很突然。安静却没有回来。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p12",
+      "sequence": 12,
+      "location_id": "convenience_store_front",
+      "characters": ["male_outdoor"],
+      "render_profile": {
+        "workflow_id": "night-street",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101012,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.55,
+          "street_mood_strength": 0.7
+        },
+        "notes": "keep convenience store scene quiet and not crowded"
+      },
+      "scene_description": "wide shot, the next night the male lead waits outside a convenience store holding a canned drink",
+      "prompt_build": {
+        "character_refs": ["male_outdoor"],
+        "scene_ref": "convenience_store_front",
+        "local_positive": "wide shot, standing outside convenience store at night holding a canned drink, pretending indifference while waiting",
+        "local_negative": "crowded pedestrians, bright daytime feel, messy traffic"
+      },
+      "dialogue": [],
+      "narration": ["第二晚，他还是来了。"],
+      "bubble_plan": [
+        {
+          "type": "narration",
+          "text": "第二晚，他还是来了。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p13",
+      "sequence": 13,
+      "location_id": "convenience_store_front",
+      "characters": ["male_outdoor"],
+      "render_profile": {
+        "workflow_id": "night-street",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101013,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.45,
+          "street_mood_strength": 0.7
+        },
+        "notes": "phone glow and anticipation should read clearly"
+      },
+      "scene_description": "close medium shot, the same unknown call appears again under the convenience store light",
+      "prompt_build": {
+        "character_refs": ["male_outdoor"],
+        "scene_ref": "convenience_store_front",
+        "local_positive": "close medium shot, phone screen lighting up with unknown caller again under convenience store light, anticipation and tension",
+        "local_negative": "blurry phone, unreadable screen, exaggerated smile"
+      },
+      "dialogue": [],
+      "narration": [],
+      "bubble_plan": [],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p14",
+      "sequence": 14,
+      "location_id": "convenience_store_front",
+      "characters": ["male_outdoor"],
+      "render_profile": {
+        "workflow_id": "night-street",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101014,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.5,
+          "street_mood_strength": 0.75
+        },
+        "notes": "street scanning should feel intimate, not action-oriented"
+      },
+      "scene_description": "medium shot, male lead scans the street while talking on the phone outside the convenience store",
+      "prompt_build": {
+        "character_refs": ["male_outdoor"],
+        "scene_ref": "convenience_store_front",
+        "local_positive": "medium shot, walking slowly near convenience store entrance while talking on the phone, scanning the street, guarded but emotionally drawn in",
+        "local_negative": "busy crowd, heavy traffic, action movie pose, horror vibe"
+      },
+      "dialogue": [
+        {
+          "speaker": "女主（电话）",
+          "text": "你今天比昨晚好一点。至少记得买喝的了。",
+          "type": "phone_voice"
+        },
+        {
+          "speaker": "男主",
+          "text": "你到底在哪儿？",
+          "type": "normal"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "phone_voice",
+          "text": "你今天比昨晚好一点。至少记得买喝的了。",
+          "anchor_zone": "upper_left"
+        },
+        {
+          "type": "normal",
+          "text": "你到底在哪儿？",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p15",
+      "sequence": 15,
+      "location_id": "convenience_store_front",
+      "characters": ["male_outdoor"],
+      "render_profile": {
+        "workflow_id": "night-street",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101015,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.45,
+          "street_mood_strength": 0.8
+        },
+        "notes": "close-up should preserve emotional softness"
+      },
+      "scene_description": "close-up, male lead stops and softly asks how long she has known him",
+      "prompt_build": {
+        "character_refs": ["male_outdoor"],
+        "scene_ref": "convenience_store_front",
+        "local_positive": "close-up on quiet night street, blurred city lights behind him, expression softened by curiosity and attraction, intimate emotional tension",
+        "local_negative": "overdramatic expression, distorted face, cluttered neon background"
+      },
+      "dialogue": [
+        {
+          "speaker": "男主",
+          "text": "你认识我多久了？",
+          "type": "normal"
+        },
+        {
+          "speaker": "女主（电话）",
+          "text": "比你想的久。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "normal",
+          "text": "你认识我多久了？",
+          "anchor_zone": "upper_left"
+        },
+        {
+          "type": "phone_voice",
+          "text": "比你想的久。",
+          "anchor_zone": "upper_right"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": ""
+    },
+    {
+      "panel_id": "p16",
+      "sequence": 16,
+      "location_id": "night_intersection",
+      "characters": ["male_outdoor"],
+      "render_profile": {
+        "workflow_id": "night-street",
+        "model_id": "deliberate-v2",
+        "core": {
+          "seed": 101016,
+          "width": 1024,
+          "height": 1536,
+          "steps": 28,
+          "cfg": 7,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "negative_space_strength": 0.8,
+          "street_mood_strength": 0.7
+        },
+        "notes": "leave enough empty space for final hook text"
+      },
+      "scene_description": "medium wide shot, male lead stands alone under a streetlamp at an empty intersection with strong negative space",
+      "prompt_build": {
+        "character_refs": ["male_outdoor"],
+        "scene_ref": "night_intersection",
+        "local_positive": "medium wide shot, standing alone under a streetlamp, open composition with negative space, unseen feminine presence implied, suspenseful romantic noir mood",
+        "local_negative": "crowded crossing, obvious female figure, ghost horror effect, action scene, monster presence"
+      },
+      "dialogue": [
+        {
+          "speaker": "女主（电话）",
+          "text": "明晚十一点十七分。你会在这个路口见到我。",
+          "type": "phone_voice"
+        }
+      ],
+      "narration": [],
+      "bubble_plan": [
+        {
+          "type": "phone_voice",
+          "text": "明晚十一点十七分。你会在这个路口见到我。",
+          "anchor_zone": "upper_left"
+        }
+      ],
+      "status": "pending",
+      "retry_count": 0,
+      "manual_notes": "keep enough empty space for final hook text"
+    }
+  ]
+}

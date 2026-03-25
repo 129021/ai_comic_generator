@@ -1,0 +1,17 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "photoreal_window_majicmix_lora_openpose_test",
+  "updated_at": "2026-03-25T11:56:28.421Z",
+  "panels": [
+    {
+      "panel_id": "r08",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/photoreal_window_majicmix_lora_openpose_test/r08.png",
+      "workflow_id": "photoreal-majicmix-lora-openpose",
+      "workflow_file": "workflows/comfyui/baselines/baseline-photoreal-majicmix-lora-openpose-v1.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-25T11:56:28.421Z",
+      "last_error": ""
+    }
+  ]
+}

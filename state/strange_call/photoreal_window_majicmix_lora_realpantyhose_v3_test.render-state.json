@@ -1,0 +1,17 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "photoreal_window_majicmix_lora_realpantyhose_v3_test",
+  "updated_at": "2026-03-25T12:39:46.094Z",
+  "panels": [
+    {
+      "panel_id": "r12",
+      "status": "rendered",
+      "output_path": "output/base_images/strange_call/photoreal_window_majicmix_lora_realpantyhose_v3_test/r12.png",
+      "workflow_id": "photoreal-majicmix-lora-realpantyhose-v3",
+      "workflow_file": "workflows/comfyui/baselines/baseline-photoreal-majicmix-lora-realpantyhose-v3.json",
+      "renderer": "comfyui",
+      "updated_at": "2026-03-25T12:39:46.094Z",
+      "last_error": ""
+    }
+  ]
+}

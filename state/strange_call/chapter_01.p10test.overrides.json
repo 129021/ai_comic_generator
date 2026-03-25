@@ -1,0 +1,19 @@
+{
+  "panels": {
+    "p10": {
+      "render_profile": {
+        "core": {
+          "width": 768,
+          "height": 1152,
+          "steps": 24,
+          "cfg": 6.2
+        },
+        "notes": "first real reflection test at lower resolution; prioritize male reflection readability and keep female presence abstract"
+      },
+      "prompt_build": {
+        "local_positive": "male reflection is the clear primary subject, close-up reflection shot in apartment window glass at night, subtle window reflection, dark interior, quiet city night, faint feminine presence only as partial hair silhouette or soft shadow beside him, ambiguous intimate presence, dreamy noir mood, blurred reflective surface, more empty space in the lower left",
+        "local_negative": "clear full female face, full body reveal, ghost horror effect, monster features, supernatural horror creature, gore, horror jump scare, duplicated male face, extra people, full female figure, two women, female primary subject, couple portrait, romance poster, glamour portrait, fashion photography"
+      }
+    }
+  }
+}

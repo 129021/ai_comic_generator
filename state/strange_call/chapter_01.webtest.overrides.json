@@ -1,0 +1,22 @@
+{
+  "panels": {
+    "p01": {
+      "render_profile": {
+        "workflow_id": "bedroom-night-web",
+        "core": {
+          "seed": 101001,
+          "width": 256,
+          "height": 384,
+          "steps": 20,
+          "cfg": 7,
+          "sampler_name": "euler",
+          "scheduler": "karras"
+        },
+        "notes": "web workflow test with 8x upscale; reduced latent size for local MPS safety"
+      },
+      "prompt_build": {
+        "local_negative": "ng_deepnegative_v1_75t, (badhandv4:1.2), EasyNegative, (worst quality:1.35)"
+      }
+    }
+  }
+}

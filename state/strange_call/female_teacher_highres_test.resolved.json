@@ -1,0 +1,72 @@
+{
+  "project_id": "strange_call",
+  "chapter_id": "female_teacher_highres_test",
+  "chapter_title": "女教师高精度质感测试",
+  "source_script_path": "data/scripts/strange_call/female_teacher_highres_test.json",
+  "generated_at": "2026-03-24T15:24:51.651Z",
+  "render_defaults": {
+    "image_format": "png",
+    "device_scale_factor": 2
+  },
+  "panels": [
+    {
+      "panel_id": "t01",
+      "sequence": 1,
+      "location_id": "office_study",
+      "scene_description": "full-body shot of a female teacher standing in an office study and looking slightly down at a white smartphone in her left hand",
+      "resolved_prompt": {
+        "positive": "beautiful East Asian woman, beautiful asian face likeness, short softly curled black bob hair, elegant facial proportions, realistic eyelashes, calm eyes, refined nose bridge, natural lip shape, bright office study environment, standing on grey parquet patterned tiled floor, large neatly stacked pile of books and notebooks on a grey desk to the left, dark cabinet with colored binders in the background, strong sunlight entering from the right and casting visible bright wall reflections, clear and highly detailed, full-body shot of a female teacher, center framing, looking down slightly at a white smartphone in her left hand, closer facial likeness to the reference image, standing posture, matching the cleaned subject and scene references for outfit and office mood, wearing a short white lace bolero blazer jacket with intricate floral pattern and visible sleeve texture, wearing a fitted white jacquard mini dress with subtle floral woven pattern, wearing semi-sheer gray tights with a repeatable small diagonal logo-like monogram pattern across both legs, wearing gray and white pointed high heels, clear lace edges, clear jacquard cloth relief, visible tights pattern, realistic textile thickness, realistic cloth shading, large stack of books and notebooks on the gray desk at left, dark office cabinet with binders behind her, strong sunlight from the right creating bright wall streaks, premium 3d comic realism, clear material separation between skin, tights, jacket, dress and heels, (3D render, CG, octane render, Unreal Engine 5:1.3), (photorealistic, physically based rendering:1.25), highly detailed textures, sharp focus, ray tracing, cinematic key light, clean daylight rim light, controlled sunlight from the right, crisp edge definition, realistic micro-contrast, accurate material separation, detailed fabric weave, detailed lace pattern, detailed tiled floor texture, masterpiece, top quality, detailed skin texture, realistic skin pores, premium 3d comic material response",
+        "negative": "(text, watermarks, large artistic letters, subtitles, logos, cartoon, 2d, illustration, drawing, painting, smooth skin, plastic skin, flat lighting, overexposed, low quality, worst quality, artifact, blurry, bad anatomy, deformed limbs, extra fingers, noisy, soft focus, dreamy haze, glow fog, bloom fog, washed out highlights, oversoft beauty filter), male primary subject, visible male figure, missing phone, cropped body, close-up portrait, chest-up portrait, generic fashion catalog pose, empty background, rubber clothing, latex clothing, muddy tights texture, plain leggings, flat cloth, glossy plastic fabric, airbrushed skin, dreamy haze, excessive glow, foggy bloom, washed out lace detail, missing book stack, missing cabinet, comic sound effect text, big black chinese characters"
+      },
+      "resolved_render": {
+        "workflow_id": "office-teacher-highres-v3",
+        "workflow_file": "workflows/comfyui/baselines/baseline-office-teacher-highres-v3.json",
+        "model_id": "majicMIX realistic 麦橘写实_v7.safetensors",
+        "core": {
+          "seed": 202812,
+          "width": 512,
+          "height": 768,
+          "steps": 22,
+          "cfg": 6.6,
+          "sampler_name": "dpmpp_2m",
+          "scheduler": "karras"
+        },
+        "scene_tuning": {
+          "reference_image_path": "woman_model.jpg",
+          "pose_map_path": "output/pose_maps/female_teacher_office_pose_map.png",
+          "style_reference_path": "data/references/reference_subject_clean_square.png",
+          "composition_reference_path": "data/references/reference_scene_clean_square.png",
+          "faceid_lora_strength": 0.46,
+          "faceid_weight": 0.74,
+          "faceid_weight_faceidv2": 0.96,
+          "controlnet_strength": 0.76
+        },
+        "notes": "Highres v3 office test using cleaned square references for outfit style and office composition guidance, while keeping FaceID, OpenPose silhouette control, and the two-stage 512x768 to 1024x1536 refinement flow, now switched to majicMIX realistic v7 for Asian-face and modern-fashion comparison."
+      },
+      "text_content": {
+        "dialogue": [],
+        "narration": [
+          "她站在办公室里，像从高精度 3D 渲染里走出来。"
+        ],
+        "bubble_plan": [
+          {
+            "type": "narration",
+            "text": "她站在办公室里，像从高精度 3D 渲染里走出来。",
+            "anchor_zone": "upper_left"
+          }
+        ]
+      },
+      "output": {
+        "base_image_path": "output/base_images/strange_call/female_teacher_highres_test/t01.png",
+        "final_image_path": "output/final_comic/strange_call/female_teacher_highres_test/t01.png"
+      },
+      "state": {
+        "status": "pending",
+        "retry_count": 0,
+        "approved": false,
+        "last_error": "",
+        "manual_notes": ""
+      }
+    }
+  ]
+}
