@@ -68,8 +68,9 @@ export function buildPreviewPanel(
         height,
         steps: Math.min(panel.resolved_render.core.steps, config.maxSteps),
       },
-      // Preview renders favor speed and composition checks over identity locking.
-      scene_tuning: {},
+      // Keep scene_tuning so reference-driven workflows remain valid in preview mode.
+      // Some workflows require staged reference assets just to pass input validation.
+      scene_tuning: panel.resolved_render.scene_tuning,
       notes: `${panel.resolved_render.notes} [preview mode]`.trim(),
     },
   };

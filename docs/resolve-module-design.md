@@ -74,6 +74,7 @@ Top-level fields:
 - `chapter_title`
 - `style_profile`
 - `character_anchors`
+- `character_consistency` (optional)
 - `scene_anchors`
 - `panels`
 
@@ -130,6 +131,7 @@ Overrides should be panel-scoped.
 The resolve module should assemble:
 
 - character anchor text
+- character consistency positive prompt fragments
 - scene anchor text
 - local positive prompt
 - global positive style suffix
@@ -153,6 +155,7 @@ The final string should be written into:
 The resolve module should assemble:
 
 - global negative style string
+- character consistency negative prompt fragments
 - local negative prompt
 
 Recommended formula:
@@ -194,7 +197,7 @@ The resolve module should copy forward:
 
 - `model_id`
 - `core`
-- `scene_tuning`
+- merged `scene_tuning`
 - `notes`
 
 into:
@@ -202,6 +205,7 @@ into:
 - `resolved_render`
 
 This makes the render module stateless with respect to source expansion logic.
+If `character_consistency` is present, its `scene_tuning` values should be merged first and panel-level `render_profile.scene_tuning` should override them when keys conflict.
 
 ### 7. Normalize Dialogue Metadata
 

@@ -11,6 +11,32 @@
     "male_outdoor": "young East Asian man, 28 years old, short black hair, slim build, clean facial features, slightly tired eyes, subtle dark circles, calm and restrained expression, wearing a light gray shirt or thin jacket with visible woven fabric texture and dark pants with realistic cloth folds",
     "female_implied": "mysterious young East Asian woman implied through visual fragments only, long dark hair, pale skin tone, slender fingers, soft feminine silhouette, intimate and calm presence, subtle sensual tension"
   },
+  "character_consistency": {
+    "male_indoor": {
+      "positive_prompt": "same male lead identity across panels, same short black hair, same slightly tired eyes, same dark gray loose cotton knit T-shirt, same soft home pants, consistent modern urban styling",
+      "negative_prompt": "different hairstyle, different facial structure, different age, different shirt color, suit jacket, formal wear, business suit, random costume change",
+      "scene_tuning": {
+        "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+        "faceid_lora_strength": 0.65,
+        "faceid_weight": 0.9,
+        "faceid_weight_faceidv2": 1.2
+      }
+    },
+    "male_outdoor": {
+      "positive_prompt": "same male lead identity across panels, same short black hair, same slightly tired eyes, same light gray shirt or thin jacket, same dark pants, consistent modern urban styling",
+      "negative_prompt": "different hairstyle, different facial structure, different age, different jacket color, suit jacket, formal wear, random costume change",
+      "scene_tuning": {
+        "reference_image_path": "data/references/strange_call/male_lead_ref.png",
+        "faceid_lora_strength": 0.58,
+        "faceid_weight": 0.82,
+        "faceid_weight_faceidv2": 1.0
+      }
+    },
+    "female_implied": {
+      "positive_prompt": "keep the female presence fragmentary and nonliteral, long dark hair fragments, soft feminine silhouette only, implied rather than fully revealed",
+      "negative_prompt": "clear full female face, full body reveal, explicit second protagonist close-up, literal apparition"
+    }
+  },
   "scene_anchors": {
     "bedroom": "small urban single-person bedroom, slightly messy but lived-in, bed, desk, warm bedside lamp, smartphone light, unopened convenience store rice ball, half glass of water, quiet lonely atmosphere",
     "window_corner": "apartment window at night, reflective glass, dark interior, distant residential lights, quiet city night, ambiguous reflective surface",
@@ -36,10 +62,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
-          "faceid_weight": 0.9,
-          "faceid_weight_faceidv2": 1.2,
           "controlnet_strength": 0.75
         },
         "notes": "primary face-locked bedroom establishing shot"
@@ -116,10 +138,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
-          "faceid_weight": 0.9,
-          "faceid_weight_faceidv2": 1.2,
           "controlnet_strength": 0.75
         },
         "notes": "face lock should hold while preserving hesitation and hand positioning"
@@ -162,10 +180,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
-          "faceid_weight": 0.9,
-          "faceid_weight_faceidv2": 1.2,
           "controlnet_strength": 0.72
         },
         "notes": "face lock should support the close-up phone reaction without over-stylizing"
@@ -224,8 +238,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
           "faceid_weight": 0.94,
           "faceid_weight_faceidv2": 1.25,
           "controlnet_strength": 0.7
@@ -276,10 +288,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
-          "faceid_weight": 0.9,
-          "faceid_weight_faceidv2": 1.2,
           "controlnet_strength": 0.75
         },
         "notes": "face lock should support upright posture and guarded expression"
@@ -384,8 +392,6 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
-          "reference_image_path": "data/references/strange_call/male_lead_ref.png",
-          "faceid_lora_strength": 0.65,
           "faceid_weight": 0.92,
           "faceid_weight_faceidv2": 1.2,
           "controlnet_strength": 0.72
@@ -424,7 +430,7 @@
       "location_id": "window_corner",
       "characters": ["male_indoor"],
       "render_profile": {
-        "workflow_id": "window-reflection",
+        "workflow_id": "window-reflection-faceid-lite",
         "model_id": "deliberate-v2",
         "core": {
           "seed": 101009,
@@ -436,10 +442,13 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
+          "faceid_lora_strength": 0.5,
+          "faceid_weight": 0.68,
+          "faceid_weight_faceidv2": 0.9,
           "female_implied_strength": 0.2,
           "reflection_softness": 0.45
         },
-        "notes": "male lead should dominate the frame, reflection remains subtle"
+        "notes": "male lead should dominate the frame, reflection remains subtle, and a lighter face lock should keep his identity stable in glass"
       },
       "scene_description": "medium wide shot from behind, male lead pulls aside the curtain and checks outside",
       "prompt_build": {
@@ -483,7 +492,7 @@
       "location_id": "window_corner",
       "characters": ["male_indoor", "female_implied"],
       "render_profile": {
-        "workflow_id": "window-reflection",
+        "workflow_id": "window-reflection-faceid-lite",
         "model_id": "deliberate-v2",
         "core": {
           "seed": 101010,
@@ -495,10 +504,13 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
+          "faceid_lora_strength": 0.52,
+          "faceid_weight": 0.72,
+          "faceid_weight_faceidv2": 0.92,
           "female_implied_strength": 0.45,
           "reflection_softness": 0.6
         },
-        "notes": "do not allow full female reveal"
+        "notes": "do not allow full female reveal, but keep the male lead face consistent through the window-reflection sequence"
       },
       "scene_description": "reflective close-up, the male lead is visible in the glass with a faint feminine hint beside him",
       "prompt_build": {
@@ -526,7 +538,7 @@
       "location_id": "window_corner",
       "characters": ["male_indoor"],
       "render_profile": {
-        "workflow_id": "window-reflection",
+        "workflow_id": "window-reflection-faceid-lite",
         "model_id": "deliberate-v2",
         "core": {
           "seed": 101011,
@@ -538,10 +550,13 @@
           "scheduler": "karras"
         },
         "scene_tuning": {
+          "faceid_lora_strength": 0.5,
+          "faceid_weight": 0.68,
+          "faceid_weight_faceidv2": 0.9,
           "female_implied_strength": 0.15,
           "reflection_softness": 0.5
         },
-        "notes": "post-call emptiness should remain the focus"
+        "notes": "post-call emptiness should remain the focus while the same male lead identity carries through the window beat"
       },
       "scene_description": "medium shot, the call has ended and the male lead stands alone by the window staring at the dark phone screen",
       "prompt_build": {

@@ -60,6 +60,14 @@ export function validateSourceScript(script: SourceScript): void {
     throw new ValidationError("Source script must have style_profile.global_positive and global_negative.");
   }
 
+  for (const characterRef of Object.keys(script.character_consistency ?? {})) {
+    if (!script.character_anchors[characterRef]) {
+      throw new ValidationError(
+        `character_consistency references unknown character "${characterRef}".`,
+      );
+    }
+  }
+
   assertArray(script.panels, "Source script must have panels array.");
 
   const seen = new Set<string>();

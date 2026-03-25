@@ -14,6 +14,12 @@ export interface StyleProfile {
   global_negative: string;
 }
 
+export interface CharacterConsistencyProfile {
+  positive_prompt?: string;
+  negative_prompt?: string;
+  scene_tuning?: Record<string, RenderTuningValue>;
+}
+
 export interface PromptBuild {
   character_refs: string[];
   scene_ref: string;
@@ -76,6 +82,7 @@ export interface SourceScript {
   chapter_title: string;
   style_profile: StyleProfile;
   character_anchors: Record<string, string>;
+  character_consistency?: Record<string, CharacterConsistencyProfile>;
   scene_anchors: Record<string, string>;
   panels: SourcePanel[];
 }

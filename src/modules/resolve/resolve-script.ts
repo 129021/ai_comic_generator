@@ -81,7 +81,27 @@ function buildInitialState(panel: SourcePanel): PanelState {
   };
 }
 
+function buildCharacterConsistencyTuning(
+  script: SourceScript,
+  panel: SourcePanel,
+): Record<string, string | number | boolean> {
+  const merged: Record<string, string | number | boolean> = {};
+
+  for (const characterRef of panel.characters) {
+    const profile = script.character_consistency?.[characterRef];
+    if (!profile?.scene_tuning) {
+      continue;
+    }
+
+    Object.assign(merged, profile.scene_tuning);
+  }
+
+  return merged;
+}
+
 function buildResolvedPanel(script: SourceScript, panel: SourcePanel): ResolvedPanel {
+  const consistencySceneTuning = buildCharacterConsistencyTuning(script, panel);
+
   return {
     panel_id: panel.panel_id,
     sequence: panel.sequence,
@@ -96,7 +116,10 @@ function buildResolvedPanel(script: SourceScript, panel: SourcePanel): ResolvedP
       workflow_file: resolveWorkflowFile(panel.render_profile.workflow_id),
       model_id: resolveModelId(panel.render_profile.model_id),
       core: panel.render_profile.core,
-      scene_tuning: panel.render_profile.scene_tuning,
+      scene_tuning: {
+        ...consistencySceneTuning,
+        ...panel.render_profile.scene_tuning,
+      },
       notes: panel.render_profile.notes,
     },
     text_content: {
