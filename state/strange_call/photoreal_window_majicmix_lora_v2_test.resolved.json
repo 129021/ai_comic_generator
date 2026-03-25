@@ -3,7 +3,7 @@
   "chapter_id": "photoreal_window_majicmix_lora_v2_test",
   "chapter_title": "真人感窗口人像 LoRA 测试 V2",
   "source_script_path": "data/scripts/strange_call/photoreal_window_majicmix_lora_v2_test.json",
-  "generated_at": "2026-03-25T11:08:21.718Z",
+  "generated_at": "2026-03-25T12:52:57.395Z",
   "render_defaults": {
     "image_format": "png",
     "device_scale_factor": 2
@@ -19,7 +19,7 @@
         "negative": "cartoon, 2d, painting, illustration, overprocessed beauty skin, plastic skin, low quality, worst quality, blurry, deformed anatomy, extra fingers, text, watermark, office props, smartphone, empty limbs, duplicate body parts, broken hands, anime face, heavy cel shading, exaggerated giant eyes, posterized skin, oversharpened edges, white cloth, cream cloth, beige cloth, blanket, towel, shawl, wrap dress made from loose fabric, nude shoulder wrap, exposed shoulders, off-shoulder cream garment, white dress, ivory dress, bathrobe, black shoes"
       },
       "resolved_render": {
-        "workflow_id": "photoreal-majicmix-lora",
+        "workflow_id": "photoreal-majicmix-lora-promptonly",
         "workflow_file": "workflows/comfyui/baselines/baseline-photoreal-majicmix-lora-v1.json",
         "model_id": "majicMIX realistic 麦橘写实_v7.safetensors",
         "core": {

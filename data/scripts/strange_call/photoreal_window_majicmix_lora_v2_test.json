@@ -19,7 +19,7 @@
       "location_id": "window_daylight",
       "characters": ["window_woman"],
       "render_profile": {
-        "workflow_id": "photoreal-majicmix-lora",
+        "workflow_id": "photoreal-majicmix-lora-promptonly",
         "model_id": "majicmix-realistic-v7",
         "core": {
           "seed": 441778010,

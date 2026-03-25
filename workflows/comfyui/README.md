@@ -209,6 +209,17 @@ Every approved baseline workflow should have associated notes recorded somewhere
 - known weaknesses
 - example successful panels
 
+## Current Photoreal Default
+
+The `workflow_id` alias `photoreal-majicmix-lora` should always point to the current default photoreal window baseline.
+
+As of the latest hosiery benchmark promotion:
+
+- `photoreal-majicmix-lora` points to `baseline-photoreal-majicmix-lora-realpantyhose-v3.json`
+- `photoreal-majicmix-lora-promptonly` preserves the earlier prompt-only branch for reproducing `r04` to `r07`
+
+This keeps new photoreal runs on the current best baseline while preserving reproducibility for older benchmark scripts.
+
 ## Do Not Mix These Concepts
 
 Avoid mixing:

@@ -256,6 +256,7 @@
 - Keep `r10` as the useful midpoint showing that lower `RealPantyhose` strength improves balance.
 - Keep `r11` only as the A/B evidence that `civitai_pantyhose` is not the right replacement path here.
 - Keep `r12` as the current best overall candidate and the best hosiery-enhanced candidate.
+- Promote the pipeline alias `photoreal-majicmix-lora` to the `r12` workflow, and keep the earlier prompt-only branch under `photoreal-majicmix-lora-promptonly`.
 
 ## Recommended Next Step
 Do not spend more time swapping hosiery LoRAs at the same setting.
